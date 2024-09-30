@@ -21,8 +21,8 @@
 title: Vamos
 description: >- # this means to ignore newlines until "baseurl:"
   Módulo de desmobilização
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/vamos_static" # the subpath of your site, e.g. /blog
+url: "https://abrcoutinho.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Import SASS partials from sass_dir
