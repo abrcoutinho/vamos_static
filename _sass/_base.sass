@@ -1,0 +1,224 @@
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap')
+$font: "Outfit", system-ui
+
+// color themes
+[data-theme="light"]
+  --brand: #E20A17
+  --neutral_0: #FFFFFF
+  --neutral_10: #F6F7FA
+  --neutral_20: #F0F1F2
+
+  --neutral_80: #6B7280
+  --neutral_90: #4F4C4D
+  --neutral_100: #000000
+
+  --links: #3F83AE
+
+  --opacity_2: rgba(0,0,0,0.02)
+  --opacity_10: rgba(0,0,0,0.1)
+  --opacity_20: rgba(0,0,0,0.2)
+
+  --status_okay: #BCFFC3
+  --status_alert: #F6F486
+  --status_late: #FEA3A8
+
+[data-theme="dark"]
+  --brand: #FF3A46
+  --neutral_0: #484848
+  --neutral_10: #3F3F42
+  --neutral_20: #312F30
+
+  --neutral_80: #DBDBDB
+  --neutral_90: #4F4C4D
+  --neutral_100: #FFFFFF
+
+  --links: #7ABFEC
+
+  --opacity_2: rgba(255,255,255,.08)
+  --opacity_10: rgba(255,255,255,.2)
+  --opacity_20: rgba(255,255,255,.4)
+
+  --status_okay: #44C133
+  --status_alert: #E1636A
+  --status_late: #D3C225
+
+
+$ease: cubic-bezier(0.5,0,0,1)
+
+// resets
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, nav, section, menu, time, mark, audio, video, canvas
+  margin:     0
+  padding:    0
+  border:     0
+  outline:     none
+
+*, html
+  scroll-behavior: smooth !important
+
+html, body
+  min-height:               100%
+  -ms-text-size-adjust:     100%
+  -webkit-text-size-adjust: 100%
+  outline:                  none
+
+body, input, textarea
+  font:                     1em $font
+  font-weight:              400
+  -webkit-font-smoothing:   antialiased
+
+body
+  overflow-x:               hidden
+  background-color:         var(--neutral_20)
+
+a
+  text-decoration:          none
+ul, ol, dl
+  list-style:               none
+button
+  padding:                  0
+  border:                   0
+  background:               transparent
+  cursor:                   pointer
+img
+  display:                  block
+em
+  font-style:               normal
+
+
+// selection
+::selection
+  background:       var(--brand)
+  color:            var(--neutral_0)
+  text-shadow:      none
+::-moz-selection
+  background:       var(--brand)
+  color:            var(--neutral_0)
+  text-shadow:      none
+
+
+// placeholder
+$placeholder: var(--brand)
+::-webkit-input-placeholder
+  color: $placeholder
+::-moz-placeholder
+  color: $placeholder
+\:-moz-placeholder
+  color: $placeholder
+\:-ms-input-placeholder
+  color: $placeholder
+
+
+// scrollbars webkit
+::-webkit-scrollbar
+  width: 6px
+  background-color: transparent
+  
+::-webkit-scrollbar-track
+  border-radius: 4px
+
+::-webkit-scrollbar-thumb
+  border-radius: 4px
+  background-color: traansparent
+  border-right: solid 3px var(--neutral_0)
+  -webkit-background-clip: content-box
+
+::-webkit-scrollbar-thumb:window-inactive
+  background: var(--neutral_20)
+
+
+%clear
+  &:after
+    height:             0
+    clear:              both
+    content:            "."
+    display:            block
+    font-size:          0
+    visibility:         hidden
+    position:           initial
+
+
+@mixin translate($val1, $val2)
+  -webkit-transform:    translate($val1, $val2)
+  -moz-transform:       translate($val1, $val2)
+  -ms-transform:        translate($val1, $val2)
+  -o-transform:         translate($val1, $val2)
+  transform:            translate($val1, $val2)
+
+
+%input_focus
+  outline:
+    width: 4px
+    style: solid
+    color: transparent
+    offset: -4px
+  &:hover
+    outline-color: black
+  &:focus
+    outline-color: #FFE2A9
+    
+
+
+%button
+  text-transform: uppercase
+  color: var(--brand)
+  height: 64px
+  line-height: 64px
+  padding: 0 1.5rem
+  font-weight: 900
+  border-radius: 8px
+  letter-spacing: 1px
+  display: inline-block
+  position: relative
+
+
+
+// Media queries
+@mixin for-size($size)
+  @if $size == phone-only
+    @media (max-width: 599px)
+      @content
+  @else if $size == tablet-portrait-up
+    @media (min-width: 600px) and (orientation: portrait) and (max-width: 1199px)
+      @content
+  @else if $size == tablet-landscape-up
+    @media (min-width: 900px) and (orientation: landscape) and (max-width: 1199px)
+      @content
+  @else if $size == desktop-up
+    @media (min-width: 1200px) and (max-width: 1599px)
+      @content
+  @else if $size == big-desktop-up
+    @media (min-width: 1600px)
+      @content
+
+$column-phone: 90vw
+$column-tablet-portrait-up: 90vw
+$column-tablet-landscape-up: 90vw
+$column-desktop-up: 90vw
+$column-big-up: 1528px
+
+
+
+.app_vamos_desmob
+  height: 100vh
+  display: flex
+  flex-direction: column
+  box-sizing: border-box
+  padding-bottom: 24px
+  position: relative
+
+  &::before
+    content: ''
+    width: 100%
+    height: 70%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    background: 
+      image: url("../img/bg_vamos_frota.jpg")
+      repeat: no-repeat
+      position: center top
+      size: cover
+

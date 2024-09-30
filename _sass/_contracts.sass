@@ -1,0 +1,311 @@
+
+// Tela de contratos
+.contracts
+	width: calc(100vw - 48px)
+	background-color: var(--neutral_0)
+	flex: 1 1 auto
+	align-self: center
+	border-radius: 24px
+	position: relative
+	overflow-y: auto
+	padding-bottom: 20px
+	z-index: 1
+
+	&:hover
+		&::-webkit-scrollbar-thumb
+			background-color: var(--opacity_20)
+
+	&::-webkit-scrollbar-button:start
+		height: 4rem
+	&::-webkit-scrollbar-button:end
+		height: 2rem
+
+
+	& > header
+		position: sticky
+		top: 0
+		background-color: var(--neutral_0)
+		margin-top: 12px
+		padding: 16px 20px 0 20px
+		display: flex
+		justify-content: space-between
+		z-index: 2
+
+		h1
+			font-size: 28px
+			font-weight: 500
+			line-height: 32px
+			color: var(--neutral_100)
+
+			small
+				font-size: 12px
+				font-weight: 800
+				background-color: var(--neutral_100)
+				color: var(--neutral_0)
+				border-radius: 4px
+				padding: 1px 4px
+				vertical-align: middle
+				margin-left: 8px
+
+		aside
+			display: flex
+			gap: 40px
+
+			button
+				font-family: $font
+				font-size: 14px
+				font-weight: 500
+				color: var(--neutral_100)
+				outline: solid 1px transparent
+				&:hover
+					outline-color: var(--neutral_80)
+
+		.arrange
+			background-color: var(--opacity_10)
+			padding: 4px
+			border-radius: 12px
+			display: flex
+			gap: 4px
+			& > button
+				height: 28px
+				border-radius: 8px
+				background-color: var(--neutral_0)
+				display: flex
+				gap: 8px
+				align-items: center
+
+				&:first-of-type
+					padding: 0 8px 0 12px
+					svg
+						width: 16px
+						height: 16px
+					path
+						fill: var(--neutral_100)
+				&:last-of-type
+					width: 40px
+					justify-content: center
+					svg
+						width: 20px
+						height: 20px
+					path:first-of-type
+						fill: var(--neutral_20)
+					path:last-of-type
+						fill: var(--neutral_100)
+
+		.filters
+			display: flex
+			gap: 4px
+			button
+				width: 36px
+				height: 36px
+				border: solid 1px var(--opacity_20)
+				border-radius: 50%
+				display: flex
+				align-items: center
+				justify-content: center
+				svg
+					width: 16px
+					height: 16px
+				path
+					fill: var(--neutral_80)
+
+		.export
+			display: flex
+			gap: 10px
+			align-items: center
+			border: solid 1px var(--opacity_20)
+			border-radius: 8px
+			padding: 0 10px
+			svg
+				width: 20px
+				height: 20px
+			path
+				fill: var(--neutral_80)
+
+
+	table
+		width: 100%
+		box-sizing: border-box
+		padding: 0 20px
+		margin-top: 40px
+
+	caption
+		height: 24px
+		display: block
+		font-weight: 700
+		text-transform: uppercase
+		color: var(--neutral_80)
+		overflow-x: hidden
+		position: sticky
+		top: 50px
+		background-color: var(--neutral_0)
+		z-index: 1
+		&::before, &::after
+			content: ''
+			width: 20px
+			height: 100%
+			background-color:  var(--neutral_0)
+			position: absolute
+			z-index: 1
+			top: 0
+		&::before
+			left: 0
+		&::after
+			right: 0
+
+		small
+			position: relative
+			font-size: 12px
+			background-color: var(--neutral_0)
+			padding: 0 20px
+			&::before, &::after
+				content: ''
+				width: 9999px
+				border-bottom: solid 1px var(--opacity_10)
+				position: absolute
+				top: 50%
+			&::before
+				left: 100%
+			&::after
+				right: 100%
+
+	tr
+		height: 56px
+		color: var(--neutral_100)
+		background-color: var(--neutral_10)
+		border-radius: 12px
+		overflow: hidden
+		display: flex
+		gap: 12px
+		align-items: center
+		margin-top: 4px
+		padding: 0 12px
+		box-sizing: border-box
+		cursor: pointer
+		outline: solid 1px var(--neutral_10)
+
+		&:hover
+			transition: transform .3s $ease, background-color .3s $ease
+			background-color: var(--neutral_0)
+			outline-color: var(--opacity_20)
+			transform: scale(1.005)
+
+	td
+		box-sizing: border-box
+		display: flex
+		align-items: center
+		gap: 8px
+		position: relative
+
+
+		// Num. do contrato
+		&:first-of-type
+			flex: 0 1 176px
+			font-size: 18px
+			svg
+				width: 24px
+				height: 24px
+			path
+				fill: var(--brand)
+
+		// Cliente
+		&:nth-of-type(2)
+			font-weight: bold
+			flex: 1 1 auto
+
+		// Vencimento
+		&:nth-of-type(3)
+			flex: 0 1 128px
+			svg
+				width: 20px
+				height: 20px
+			path
+				fill: var(--neutral_80)
+			&[data-type="vencido"]
+				color: var(--brand)
+				path
+					fill: var(--brand)
+
+		// CNPJ
+		&:nth-of-type(4)
+			flex: 0 1 200px
+			svg
+				width: 20px
+				height: 20px
+			path
+				fill: var(--neutral_100)
+
+		// Tel
+		&:nth-of-type(5)
+			flex: 0 1 36px
+			height: 36px
+			justify-content: center
+			svg
+				width: 24px
+				height: 24px
+			path
+				fill: var(--neutral_100)
+			&:hover .hidden_info
+				visibility: visible
+				opacity: 1
+				transition: opacity .4s $ease
+
+		// Email
+		&:nth-of-type(6)
+			flex: 0 1 36px
+			height: 36px
+			justify-content: center
+			svg
+				width: 24px
+				height: 24px
+			path
+				fill: var(--neutral_100)
+			&:hover .hidden_info
+				visibility: visible
+				opacity: 1
+				transition: opacity .4s $ease
+
+		.hidden_info
+			min-width: 160px
+			height: 100%
+			display: flex
+			align-items: center
+			justify-content: right
+			gap: 8px
+			font-style: normal
+			position: absolute
+			top: 0
+			right: calc(100% - 36px)
+			background-color: var(--neutral_80)
+			color: var(--neutral_0)
+			padding: 0 5px 0 12px
+			border-radius: 4px
+			box-shadow: -4px -2px 4px rgba(0,0,0,.3)
+			visibility: hidden
+			opacity: 0
+			span
+				flex: 0 0 auto
+			svg
+				flex: 0 0 24px
+			path
+				fill: var(--neutral_0)
+
+		// Status (Em dia | Inadimplente)
+		&:nth-of-type(7)
+			flex: 0 1 120px
+			justify-content: right
+			em
+				height: 20px
+				line-height: 20px
+				font-size: 10px
+				text-transform: uppercase
+				border-radius: 4px
+				padding: 0 8px
+				border: solid 1px var(--neutral_80)
+				color: var(--neutral_80)
+				font-style: normal
+				font-weight: 700
+				box-sizing: border-box
+			&[data-type="inadimplente"] em
+				color: var(--brand)
+				border-color: var(--brand)
