@@ -1,15 +1,9 @@
 
 // Tela de contratos
 .contracts
-	width: calc(100vw - 48px)
-	background-color: var(--neutral_0)
+	@extend %main_container
 	flex: 1 1 auto
-	align-self: center
-	border-radius: 24px
-	position: relative
 	overflow-y: auto
-	padding-bottom: 20px
-	z-index: 1
 
 	&:hover
 		&::-webkit-scrollbar-thumb
@@ -25,35 +19,35 @@
 		position: sticky
 		top: 0
 		background-color: var(--neutral_0)
-		margin-top: 12px
-		padding: 16px 20px 0 20px
+		margin-top: .75rem
+		padding: 1rem 1.25rem 0 1.25rem
 		display: flex
 		justify-content: space-between
 		z-index: 2
 
 		h1
-			font-size: 28px
+			font-size: 1.75rem
 			font-weight: 500
-			line-height: 32px
+			line-height: 2rem
 			color: var(--neutral_100)
 
 			small
-				font-size: 12px
+				font-size: .75rem
 				font-weight: 800
 				background-color: var(--neutral_100)
 				color: var(--neutral_0)
-				border-radius: 4px
-				padding: 1px 4px
+				border-radius: .25rem
+				padding: 1px .25rem
 				vertical-align: middle
-				margin-left: 8px
+				margin-left: .5rem
 
 		aside
 			display: flex
-			gap: 40px
+			gap: 2.5rem
 
 			button
 				font-family: $font
-				font-size: 14px
+				font-size: .875rem
 				font-weight: 500
 				color: var(--neutral_100)
 				outline: solid 1px transparent
@@ -62,87 +56,96 @@
 
 		.arrange
 			background-color: var(--opacity_10)
-			padding: 4px
-			border-radius: 12px
+			padding: .25rem
+			border-radius: .75rem
 			display: flex
-			gap: 4px
+			gap: .25rem
 			& > button
-				height: 28px
-				border-radius: 8px
+				height: 1.75rem
+				border-radius: .5rem
 				background-color: var(--neutral_0)
 				display: flex
-				gap: 8px
+				gap: .5rem
 				align-items: center
 
 				&:first-of-type
-					padding: 0 8px 0 12px
+					padding: 0 .5rem 0 .75rem
 					svg
-						width: 16px
-						height: 16px
+						width: 1rem
+						height: 1rem
 					path
 						fill: var(--neutral_100)
+					i
+						width: 1rem
+						height: 1rem
+						background-color: var(--neutral_100)
+						&:first-of-type
+							-webkit-mask-image: url("../img/icons/arrange.svg")
+							mask-image: url("../img/icons/arrange.svg")
+						&:last-of-type
+							-webkit-mask-image: url("../img/icons/down.svg")
+							mask-image: url("../img/icons/down.svg")
+
 				&:last-of-type
-					width: 40px
+					width: 2.5rem
 					justify-content: center
-					svg
-						width: 20px
-						height: 20px
-					path:first-of-type
-						fill: var(--neutral_20)
-					path:last-of-type
-						fill: var(--neutral_100)
+					i
+						width: 1rem
+						height: 1rem
+						background-color: var(--neutral_100)
+						-webkit-mask-image: url("../img/icons/arrange-dir.svg")
+						mask-image: url("../img/icons/arrange-dir.svg")
 
 		.filters
 			display: flex
-			gap: 4px
+			gap: .25rem
 			button
-				width: 36px
-				height: 36px
-				border: solid 1px var(--opacity_20)
-				border-radius: 50%
-				display: flex
-				align-items: center
-				justify-content: center
-				svg
-					width: 16px
-					height: 16px
-				path
-					fill: var(--neutral_80)
+				@extend %button_ball_md
+				i
+					width: 1rem
+					height: 1rem
+					background-color: var(--neutral_80)
+				&:first-of-type i
+					-webkit-mask-image: url("../img/icons/schedule.svg")
+					mask-image: url("../img/icons/schedule.svg")
+				&:last-of-type i
+					-webkit-mask-image: url("../img/icons/search.svg")
+					mask-image: url("../img/icons/search.svg")
 
 		.export
 			display: flex
-			gap: 10px
+			gap: .625rem
 			align-items: center
 			border: solid 1px var(--opacity_20)
-			border-radius: 8px
-			padding: 0 10px
-			svg
-				width: 20px
-				height: 20px
-			path
-				fill: var(--neutral_80)
-
+			border-radius: .5rem
+			padding: 0 .625rem
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_80)
+				-webkit-mask-image: url("../img/icons/xls.svg")
+				mask-image: url("../img/icons/xls.svg")
 
 	table
 		width: 100%
 		box-sizing: border-box
-		padding: 0 20px
-		margin-top: 40px
+		padding: 0 1.25rem
+		margin-top: 2.5rem
 
 	caption
-		height: 24px
+		height: 1.5rem
 		display: block
 		font-weight: 700
 		text-transform: uppercase
 		color: var(--neutral_80)
 		overflow-x: hidden
 		position: sticky
-		top: 50px
+		top: 3.125rem
 		background-color: var(--neutral_0)
 		z-index: 1
 		&::before, &::after
 			content: ''
-			width: 20px
+			width: 1.25rem
 			height: 100%
 			background-color:  var(--neutral_0)
 			position: absolute
@@ -155,9 +158,9 @@
 
 		small
 			position: relative
-			font-size: 12px
+			font-size: .75rem
 			background-color: var(--neutral_0)
-			padding: 0 20px
+			padding: 0 1.25rem
 			&::before, &::after
 				content: ''
 				width: 9999px
@@ -170,16 +173,16 @@
 				right: 100%
 
 	tr
-		height: 56px
+		height: 3.5rem
 		color: var(--neutral_100)
 		background-color: var(--neutral_10)
-		border-radius: 12px
+		border-radius: .75rem
 		overflow: hidden
 		display: flex
-		gap: 12px
+		gap: .75rem
 		align-items: center
-		margin-top: 4px
-		padding: 0 12px
+		margin-top: .25rem
+		padding: 0 .75rem
 		box-sizing: border-box
 		cursor: pointer
 		outline: solid 1px var(--neutral_10)
@@ -194,19 +197,20 @@
 		box-sizing: border-box
 		display: flex
 		align-items: center
-		gap: 8px
+		gap: .5rem
 		position: relative
 
 
 		// Num. do contrato
 		&:first-of-type
-			flex: 0 1 176px
-			font-size: 18px
-			svg
-				width: 24px
-				height: 24px
-			path
-				fill: var(--brand)
+			flex: 0 1 11rem
+			font-size: 1.125rem
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--brand)
+				-webkit-mask-image: url("../img/icons/paper.svg")
+				mask-image: url("../img/icons/paper.svg")
 
 		// Cliente
 		&:nth-of-type(2)
@@ -215,36 +219,37 @@
 
 		// Vencimento
 		&:nth-of-type(3)
-			flex: 0 1 128px
-			svg
-				width: 20px
-				height: 20px
-			path
-				fill: var(--neutral_80)
-			&[data-type="vencido"]
-				color: var(--brand)
-				path
-					fill: var(--brand)
+			flex: 0 1 8rem
+			i
+				width: 1.25rem
+				height: 1.25rem
+				background-color: var(--neutral_80)
+				-webkit-mask-image: url("../img/icons/calendar-alert.svg")
+				mask-image: url("../img/icons/calendar-alert.svg")
+			&[data-type="vencido"] i
+				background-color: var(--brand)
 
 		// CNPJ
 		&:nth-of-type(4)
-			flex: 0 1 200px
-			svg
-				width: 20px
-				height: 20px
-			path
-				fill: var(--neutral_100)
+			flex: 0 1 12.5rem
+			i
+				width: 1.25rem
+				height: 1.25rem
+				background-color: var(--neutral_100)
+				-webkit-mask-image: url("../img/icons/idcard.svg")
+				mask-image: url("../img/icons/idcard.svg")
 
 		// Tel
 		&:nth-of-type(5)
-			flex: 0 1 36px
-			height: 36px
+			flex: 0 1 2.25rem
+			height: 2.25rem
 			justify-content: center
-			svg
-				width: 24px
-				height: 24px
-			path
-				fill: var(--neutral_100)
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_100)
+				-webkit-mask-image: url("../img/icons/mobile.svg")
+				mask-image: url("../img/icons/mobile.svg")
 			&:hover .hidden_info
 				visibility: visible
 				opacity: 1
@@ -252,55 +257,60 @@
 
 		// Email
 		&:nth-of-type(6)
-			flex: 0 1 36px
-			height: 36px
+			flex: 0 1 2.25rem
+			height: 2.25rem
 			justify-content: center
 			svg
-				width: 24px
-				height: 24px
+				width: 1.5rem
+				height: 1.5rem
 			path
 				fill: var(--neutral_100)
+			i
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_100)
+				-webkit-mask-image: url("../img/icons/mail.svg")
+				mask-image: url("../img/icons/mail.svg")
+
 			&:hover .hidden_info
 				visibility: visible
 				opacity: 1
 				transition: opacity .4s $ease
 
 		.hidden_info
-			min-width: 160px
+			min-width: 10rem
 			height: 100%
 			display: flex
 			align-items: center
 			justify-content: right
-			gap: 8px
+			gap: .5rem
 			font-style: normal
 			position: absolute
 			top: 0
-			right: calc(100% - 36px)
+			right: calc(100% - 2.25rem)
 			background-color: var(--neutral_80)
 			color: var(--neutral_0)
-			padding: 0 5px 0 12px
-			border-radius: 4px
-			box-shadow: -4px -2px 4px rgba(0,0,0,.3)
+			padding: 0 .3rem 0 .75rem
+			border-radius: .25rem
+			box-shadow: -.25rem -.125rem .25rem rgba(0,0,0,.3)
 			visibility: hidden
 			opacity: 0
 			span
 				flex: 0 0 auto
-			svg
-				flex: 0 0 24px
-			path
-				fill: var(--neutral_0)
+			i
+				background-color: var(--neutral_0)
 
 		// Status (Em dia | Inadimplente)
 		&:nth-of-type(7)
-			flex: 0 1 120px
+			flex: 0 1 7.5rem
 			justify-content: right
 			em
-				height: 20px
-				line-height: 20px
-				font-size: 10px
+				height: 1.25rem
+				line-height: 1.25rem
+				font-size: .625rem
 				text-transform: uppercase
-				border-radius: 4px
-				padding: 0 8px
+				border-radius: .25rem
+				padding: 0 .5rem
 				border: solid 1px var(--neutral_80)
 				color: var(--neutral_80)
 				font-style: normal
