@@ -1,6 +1,6 @@
 
-// Tela de contratos
-.contracts
+// Operação - lista de chamados
+.operation_list
 	@extend %main_container
 	flex: 1 1 auto
 	overflow-y: auto
@@ -105,6 +105,9 @@
 					width: 1rem
 					height: 1rem
 					background-color: var(--neutral_80)
+				&[title = "Filtros"] i
+					-webkit-mask-image: url("../img/icons/filter.svg")
+					mask-image: url("../img/icons/filter.svg")
 				&[title = "Data"] i
 					-webkit-mask-image: url("../img/icons/schedule.svg")
 					mask-image: url("../img/icons/schedule.svg")
@@ -125,6 +128,7 @@
 				background-color: var(--neutral_80)
 				-webkit-mask-image: url("../img/icons/xls.svg")
 				mask-image: url("../img/icons/xls.svg")
+
 
 	table
 		width: 100%
@@ -185,12 +189,10 @@
 		padding: 0 .75rem
 		box-sizing: border-box
 		cursor: pointer
-		outline: solid 1px var(--neutral_10)
 
 		&:hover
 			transition: transform .3s $ease, background-color .3s $ease
-			background-color: var(--neutral_0)
-			outline-color: var(--opacity_20)
+			background-color: var(--neutral_20)
 			transform: scale(1.005)
 
 	td
@@ -200,10 +202,9 @@
 		gap: .5rem
 		position: relative
 
-
-		// Num. do contrato
+		// Num. do pedido
 		&:first-of-type
-			flex: 0 1 11rem
+			flex: 0 1 8rem
 			font-size: 1.125rem
 			i
 				width: 1.5rem
@@ -217,105 +218,70 @@
 			font-weight: bold
 			flex: 1 1 auto
 
-		// Vencimento
+		// Motivo
 		&:nth-of-type(3)
+			gap: .25rem
+			margin-right: 1.75rem
+			mark
+				font-weight: 900
+				font-size: .875rem
+				background-color: var(--neutral_80)
+				padding: 0 .5rem
+				border-radius: .25rem
+				height: 1.5rem
+				line-height: 1.5rem
+				text-transform: uppercase
+				color: var(--neutral_0)
+
+		// Ativos
+		&:nth-of-type(4)
+			flex: 0 1 4rem
+			i
+				width: 1rem
+				height: 1rem
+				background-color: var(--neutral_80)
+				-webkit-mask-image: url("../img/icons/steering-wheel.svg")
+				mask-image: url("../img/icons/steering-wheel.svg")
+
+		// Data de solicitação
+		&:nth-of-type(5)
 			flex: 0 1 8rem
 			i
 				width: 1.25rem
 				height: 1.25rem
 				background-color: var(--neutral_80)
-				-webkit-mask-image: url("../img/icons/calendar-alert.svg")
-				mask-image: url("../img/icons/calendar-alert.svg")
+				-webkit-mask-image: url("../img/icons/schedule.svg")
+				mask-image: url("../img/icons/schedule.svg")
 			&[data-type="vencido"] i
 				background-color: var(--brand)
 
-		// CNPJ
-		&:nth-of-type(4)
-			flex: 0 1 12.5rem
-			i
-				width: 1.25rem
-				height: 1.25rem
-				background-color: var(--neutral_100)
-				-webkit-mask-image: url("../img/icons/idcard.svg")
-				mask-image: url("../img/icons/idcard.svg")
-
-		// Tel
-		&:nth-of-type(5)
-			flex: 0 1 2.25rem
-			height: 2.25rem
-			justify-content: center
-			i
-				width: 1.5rem
-				height: 1.5rem
-				background-color: var(--neutral_100)
-				-webkit-mask-image: url("../img/icons/mobile.svg")
-				mask-image: url("../img/icons/mobile.svg")
-			&:hover .hidden_info
-				visibility: visible
-				opacity: 1
-				transition: opacity .4s $ease
-
-		// Email
+		// Origem
 		&:nth-of-type(6)
-			flex: 0 1 2.25rem
-			height: 2.25rem
-			justify-content: center
-			svg
-				width: 1.5rem
-				height: 1.5rem
-			path
-				fill: var(--neutral_100)
-			i
-				width: 1.5rem
-				height: 1.5rem
-				background-color: var(--neutral_100)
-				-webkit-mask-image: url("../img/icons/mail.svg")
-				mask-image: url("../img/icons/mail.svg")
-
-			&:hover .hidden_info
-				visibility: visible
-				opacity: 1
-				transition: opacity .4s $ease
-
-		.hidden_info
-			min-width: 10rem
-			height: 100%
-			display: flex
-			align-items: center
-			justify-content: right
-			gap: .5rem
-			font-style: normal
-			position: absolute
-			top: 0
-			right: calc(100% - 2.25rem)
-			background-color: var(--neutral_80)
-			color: var(--neutral_0)
-			padding: 0 .3rem 0 .75rem
-			border-radius: .25rem
-			box-shadow: -.25rem -.125rem .25rem rgba(0,0,0,.3)
-			visibility: hidden
-			opacity: 0
-			span
-				flex: 0 0 auto
-			i
+			position: relative
+			&::before,
+			&::after
+				content: ''
+				width: .5rem
+				height: .75rem
 				background-color: var(--neutral_0)
+				position: absolute
+				left: -1.5rem
+			&::before
+				top: -.75rem
+				border-radius: 0 0 2.5rem 2.5rem
+			&::after
+				bottom: -.75rem
+				border-radius: 2.5rem 2.5rem 0 0
 
-		// Status (Em dia | Inadimplente)
-		&:nth-of-type(7)
-			flex: 0 1 7.5rem
-			justify-content: right
-			em
-				height: 1.25rem
-				line-height: 1.25rem
-				font-size: .625rem
-				text-transform: uppercase
-				border-radius: .25rem
-				padding: 0 .5rem
-				border: solid 1px var(--neutral_80)
-				color: var(--neutral_80)
+			ul
+				width: 14.5rem
+			li
+				display: flex
+				justify-content: space-between
+				font-size: .875rem
+			dfn
 				font-style: normal
-				font-weight: 700
-				box-sizing: border-box
-			&[data-type="inadimplente"] em
-				color: var(--brand)
-				border-color: var(--brand)
+			span:first-of-type
+				color: var(--neutral_80)
+
+

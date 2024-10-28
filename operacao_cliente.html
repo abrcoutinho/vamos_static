@@ -1,0 +1,318 @@
+---
+layout: default
+title: 13214
+permalink: /13214/
+---
+
+<header class="current_page">
+	<ol>
+		<li><a href="#" class="home_shortcut" title="Início"><i></i></a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/" title="Desmobilização">Desmobilização</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/operacao/" title="Operação">Operação</a></li>
+		<li>#{{ page.title }}</li>
+	</ol>
+
+	<input id="switch_theme" type="checkbox" title="Tema">
+</header>
+
+<div class="operation_client">
+
+	<!-- Dados do contrato -->
+	<section>
+		<div class="contract_data">
+			<header>
+				<button type="button" title="Voltar" onclick="window.location = '{{ site.url }}{{ site.baseurl }}/abertura_de_chamado/';"><i></i></button>
+				<h1><i></i>Ambev S.A</h1>
+				<h2 title="N. do chamado">#{{ page.title }}</h2>
+			</header>
+
+			<ul>
+				<li>
+					<div>
+						<small>N. do contrato</small>
+						<em>22833-1-REV2</em>
+					</div>
+					<button type="button" disabled><i></i></button>
+				</li>
+				<li>
+					<div>
+						<small>Centro de custo</small>
+						<em>125433</em>
+					</div>
+					<button type="button" disabled><i></i></button>
+				</li>
+				<li>
+					<div>
+						<small>Origem</small>
+						<em>Atendimento | José da Silva</em>
+					</div>
+					<button type="button" disabled><i></i></button>
+				</li>
+				<li>
+					<div>
+						<small>Resp. pela devolução</small>
+						<em>Cliente</em>
+					</div>
+					<button type="button" disabled><i></i></button>
+				</li>
+			</ul>
+		</div>
+
+		<ul class="client_data">
+			<li data-type="cnpj">
+				<i></i>
+				<div>
+					<small>CNPJ</small>
+					<em>07.526.557/0001-00</em>
+				</div>
+				<button type="button" disabled><i></i></button>
+			</li>
+			<li data-type="email">
+				<i></i>
+				<div>
+					<small>E-mail</small>
+					<em>email@email.com</em>
+				</div>
+				<button type="button" disabled><i></i></button>
+			</li>
+			<li data-type="tel">
+				<i></i>
+				<div>
+					<small>Telefone</small>
+					<em>(84) 3154-0000</em>
+				</div>
+				<button type="button" disabled><i></i></button>
+			</li>
+			<li data-type="contato">
+				<i></i>
+				<div>
+					<small>Contato</small>
+					<em>José da Silva</em>
+				</div>
+				<button type="button" disabled><i></i></button>
+			</li>
+			<li data-type="endereco">
+				<i></i>
+				<div>
+					<small>Endereço do cliente</small>
+					<em>Rua Doutor Renato Paes de Barros 212, Itaim Bibi, São Paulo - SP</em>
+				</div>
+				<button type="button" disabled><i></i></button>
+			</li>
+		</ul>
+	</section>
+
+	<!-- Multa -->
+	<section>...</section>
+
+	<!-- Ativos -->
+	<table>
+		<tr>
+			<th><h4><i></i>Ativos<small>10</small></h4></th>
+			<th>Agendamento de vistoria</th>
+			<th><p>Em vistoria</p></th>
+			<th>Agendamento de coleta p/ oficina</th>
+			<th>Em transporte p/ oficina</th>
+			<th>Em manutenção</th>
+			<th>Ag. de coleta p/ Seminovos</th>
+			<th>Em transporte p/ Seminovos</th>
+			<th>Entregue</th>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-ok"></td>
+			<td data-type="em-transporte-p-seminovos" class="status-current"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-current"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-ok"></td>
+			<td data-type="em-transporte-p-seminovos" class="status-current"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-current"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-ok"></td>
+			<td data-type="em-transporte-p-seminovos" class="status-current"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-current"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-ok"></td>
+			<td data-type="em-transporte-p-seminovos" class="status-current"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-current"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-ok"></td>
+			<td data-type="em-transporte-p-seminovos" class="status-current"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-current"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-ok"></td>
+			<td data-type="em-transporte-p-seminovos" class="status-current"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-current"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-ok"></td>
+			<td data-type="em-transporte-p-seminovos" class="status-current"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr>
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="status-ok"></td>
+			<td data-type="em-vistoria" class="status-ok"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="status-ok"></td>
+			<td data-type="em-transporte-p-oficina" class="status-ok"></td>
+			<td data-type="em-manutenção" class="status-ok"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="status-current"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+</div>
