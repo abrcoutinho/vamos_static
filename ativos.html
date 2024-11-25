@@ -1,0 +1,622 @@
+---
+layout: default
+title: Ativos
+permalink: /ativos/
+---
+
+<header class="current_page">
+	<ol>
+		<li><a href="#" class="home_shortcut" title="Início"><i></i></a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/" title="Desmobilização">Desmobilização</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/operacao/" title="Operação">Operação</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/13214" title="Operação">#13214</a></li>
+		<li>{{ page.title }}</li>
+	</ol>
+
+	<input id="switch_theme" type="checkbox" title="Tema">
+</header>
+
+<div class="assets_page">
+	
+	<!-- Lista de ativos -->
+	<nav class="asset_list">
+		<header>
+			<div>
+				<button type="button" class="back" title="Voltar" onclick="window.location = '{{ site.url }}{{ site.baseurl }}/13214/';"><i></i></button>
+				<h1>Ativos<small>10</small></h1>
+				<!-- Filters -->
+				<div class="filters">
+					<button type="button" title="Filtros"><i></i></button>
+					<button type="button" title="Pesquisar"><i></i></button>
+				</div>
+			</div>
+			<div>
+				<i></i>
+				<h2>Ambev S.A.</h2>
+				<small>#13214</small>
+			</div>
+		</header>
+
+		<dl>
+			<dt><small>Ag. de vistoria</small></dt>
+
+			<dd class="batch">
+				<label for="batch_ag_vistoria">Ações em lote</label>
+				<input id="batch_ag_vistoria" type="checkbox">
+			</dd>
+			
+			<!-- Status: pendente | agendado | atrasado | neutro -->
+			<dd data-status="pendente" class="active">
+				<a href="#">
+					<h5><span>Accelo</span><em>DER3A60</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+			<dd data-status="agendado">
+				<a href="#">
+					<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+					<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+			<dd data-status="atrasado">
+				<a href="#">
+					<h5><span>770S Fire</span><em>TQF1Z97</em></h5>
+					<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt><small>Em manutenção</small></dt>
+
+			<dd class="batch">
+				<label for="batch_manutencao">Ações em lote</label>
+				<input id="batch_manutencao" type="checkbox" checked>
+			</dd>
+			
+			<dd data-status="pendente">
+				<input type="checkbox" id="DER3A60">
+				<label for="DER3A60">
+					<h5><span>Accelo</span><em>DER3A60</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+				</label>
+			</dd>
+			<dd data-status="pendente">
+				<input type="checkbox" id="OAD3Y21">
+				<label for="OAD3Y21">
+					<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+					<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+				</label>
+			</dd>
+		</dl>
+
+		<dl>
+			<dt><small>Entregue</small></dt>
+	
+			<dd data-status="neutro">
+				<a href="#">
+					<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+					<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+			<dd data-status="neutro">
+				<a href="#">
+					<h5><span>770S Fire</span><em>TQF1Z97</em></h5>
+					<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+			<dd data-status="neutro">
+				<a href="#">
+					<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+					<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+			<dd data-status="neutro">
+				<a href="#">
+					<h5><span>Daily 35s14</span><em>TRE5C76</em></h5>
+					<dfn><span>Iveco</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+			<dd data-status="neutro">
+				<a href="#">
+					<h5><span>Tector</span><em>KPL7A53</em></h5>
+					<dfn><span>Iveco</span><span>Ano 2023</span></dfn>
+				</a>
+			</dd>
+		</dl>
+	</nav>
+
+	<!-- Detalhes do ativo -->
+	<div class="asset_details">
+
+		<!-- Dados do ativo -->
+		<section class="asset_data">
+			<header>
+				<i></i>
+				<h2>Mercedes Accelo</h2>
+				<dfn>DER 3H60</dfn>
+				<button type="button" class="more" title="Mais opções"><i></i></button>
+			</header>
+			<ul>
+				<li>
+					<small>Acionamento</small>
+					<em><i></i>29 jul 2024</em>
+				</li>
+				<li>
+					<small>Motivo</small>
+					<em>Devolução antecipada</em>
+				</li>
+				<li>
+					<small>Ano</small>
+					<em>2023</em>
+				</li>
+				<li>
+					<small>Chassi</small>
+					<em>9BD111060T5001256</em>
+				</li>
+				<li>
+					<small>N. de série</small>
+					<em>123456789</em>
+				</li>
+			</ul>
+		</section>
+
+		<!-- Operação -->
+		<section class="desmob">
+			<header>
+				<i></i>
+				<h2>Operação</h2>
+			</header>
+			<ol>
+
+				<!-- Agendamento de vistoria -->
+				<!-- Status: pendente | agendado | atrasado | finalizado -->
+				<li class="desmob_card" onclick="expandDesmobCard(event)" data-status="pendente">
+					<header>
+						<h3>Agendamento de vistoria</h3>
+						<dfn>Pendente</dfn>
+						<time title="Data agendada"><i></i>29 nov 2024</time>
+						<i></i>
+					</header>
+
+					<form>
+						<ul>
+							<li>
+								<label>Data</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Local</label>
+								<button type="buttom" data-type="select">Selecione...<i></i></button>
+							</li>
+							<li>
+								<label>Vistoriadora</label>
+								<button type="buttom" data-type="select">Selecione...<i></i></button>
+							</li>
+							<li data-width="full">
+								<label>Endereço</label>
+								<em>---</em>
+							</li>
+							<li data-width="full">
+								<label>Observações</label>
+								<textarea>Não há observações.</textarea>
+							</li>
+							<li data-width="full">
+								<button type="submit">Agendar vistoria</button>
+							</li>
+							<li data-width="full">
+								<button type="button">Cancelar agendamento</button>
+							</li>
+						</ul>
+					</form>
+				</li>
+
+
+				<!-- Em vistoria -->
+				<!-- Status:  desabilitado | habilitado | atual | finalizado -->
+				<li class="desmob_card" onclick="expandDesmobCard(event)" data-status="desabilitado">
+					<header>
+						<h3>Em vistoria</h3>
+						<time title="Data da vistoria"><i></i>29 nov 2024</time>
+						<i></i>
+					</header>
+
+					<form>
+						<header>
+							<div>
+								<small>Iníciar vistoria em</small>
+								<em><i></i>29 nov 2024</em>
+							</div>
+							<button type="buttom">Iniciar vistoria</button>
+						</header>
+						<ul>
+							<li>
+								<label>Data</label>
+								<em>29 nov 2024<i></i></em>
+							</li>
+							<li>
+								<label>Local</label>
+								<em>Cliente</em>
+							</li>
+							<li>
+								<label>Vistoriadora</label>
+								<em>Olho Vivo</em>
+							</li>
+							<li data-width="full">
+								<label>Endereço</label>
+								<em>Rua Doutor Renato Paes de Barros 212, Itaim Bibi, São Paulo - SP</em>
+							</li>
+							<li>
+								<label>Valor KM R$</label>
+								<input type="text" placeholder="0,00">
+							</li>
+							<li>
+								<label>Valor da vistoria R$</label>
+								<input type="text" placeholder="0,00">
+							</li>
+							<li data-width="full">
+								<label>Laudo da vistoria</label>
+								<input type="file">
+							</li>
+							<li data-width="full">
+								<label>Observações</label>
+								<textarea>Não há observações.</textarea>
+							</li>
+							<li data-width="full">
+								<button type="submit">Concluir vistoria</button>
+							</li>
+						</ul>
+					</form>
+				</li>
+
+
+				<!-- Agendamento de coleta -->
+				<!-- Status: desabilitado | pendente | agendado | atrasado | finalizado -->
+				<li class="desmob_card" onclick="expandDesmobCard(event)" data-status="habilitado">
+					<header>
+						<h3>Agendamento de coleta</h3>
+						<dfn>Pendente</dfn>
+						<time title="Data agendada"><i></i>29 nov 2024</time>
+						<i></i>
+					</header>
+
+					<form>
+						<ul>
+							<li>
+								<label>Destino</label>
+								<button type="buttom" data-type="select">Centro de preparação<i></i></button>
+							</li>
+							<li>
+								<label>Acionamento de transporte</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Agendar para</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Transportadora</label>
+								<button type="buttom" data-type="select">Selecione...<i></i></button>
+							</li>
+							<li>
+								<label>Valor do frete R$</label>
+								<input type="text" placeholder="0,00">
+							</li>
+							<li>
+								<label>Previsão de entrega</label>
+								<input type="date">
+							</li>
+							<li data-width="full">
+								<label>Endereço da coleta</label>
+								<input type="text" placeholder="Endereço...">
+							</li>
+							<li data-width="full">
+								<label>Endereço da entrega</label>
+								<input type="text" placeholder="Endereço...">
+							</li>
+							<li data-width="full">
+								<label>Observações</label>
+								<textarea>Não há observações.</textarea>
+							</li>
+							<li data-width="full">
+								<button type="submit">Agendar coleta</button>
+							</li>
+							<li data-width="full">
+								<button type="button">Cancelar agendamento</button>
+							</li>
+						</ul>
+					</form>
+				</li>
+
+
+				<!-- Em transporte p/ oficina -->
+				<!-- Status: desabilitado | habilitado | agendado | atrasado | finalizado -->
+				<li class="desmob_card" onclick="expandDesmobCard(event)" data-status="desabilitado">
+					<header>
+						<h3>Em transporte p/ oficina</h3>
+						<time title="Previsão de entrega"><i></i>29 nov 2024</time>
+						<i></i>
+					</header>
+
+					<form>
+						<ul>
+							<li>
+								<label>Transportadora</label>
+								<em>Omni Carga</em>
+							</li>
+							<li>
+								<label>Valor do frete R$</label>
+								<em>3.166,00</em>
+							</li>
+							<li>
+								<label>Previsão de entrega</label>
+								<em>seg, 7 out 2024<i></i></em>
+							</li>
+							<li data-width="full">
+								<label>Laudo de coleta da transportadora</label>
+								<input type="file">
+							</li>
+							<li data-width="full">
+								<label>Laudo de entrega da transportadora</label>
+								<input type="file">
+							</li>
+							<li data-width="full">
+								<button type="submit">Confirmar ativo em transporte</button>
+							</li>
+							<li data-width="full">
+								<button type="submit">Confirmar entrega</button>
+							</li>
+						</ul>
+					</form>
+				</li>
+
+
+				<!-- Em manutenção -->
+				<!-- Status: desabilitado | atual | finalizado -->
+				<li class="desmob_card" onclick="expandDesmobCard(event)" data-status="desabilitado">
+					<header>
+						<h3>Em manutenção</h3>
+						<time title="Entrada na oficina"><i></i>29 nov 2024</time>
+						<i></i>
+					</header>
+
+					<form>
+						<ul>
+							<li>
+								<label>Entrada na oficina</label>
+								<em>seg, 7 out 2024<i></i></em>
+							</li>
+							<li>
+								<label>Receb. do orçamento</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Aprovação do serviço</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Envio do pedido ao fornecedor</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Previsão de finalização</label>
+								<em>seg, 7 out 2024<i></i></em>
+							</li>
+							<li>
+								<label>Local de preparação</label>
+								<em>Manchester</em>
+							</li>
+							<li data-width="full">
+								<label>Endereço de preparação</label>
+								<em>Avenida das Nações Unidas, 12.092, Jurubatuba, São Paulo - SP</em>
+							</li>
+							<li>
+								<label>Aprovador atual</label>
+								<em>João da Silva</em>
+							</li>
+							<li>
+								<label>Status atual</label>
+								<em>Ag. Aprovação</em>
+							</li>
+							<li>
+								<label>Valor do processo R$</label>
+								<em>3.166,00</em>
+							</li>
+							<li data-width="full">
+								<label>Laudo da oficina</label>
+								<input type="file">
+							</li>
+							<li data-width="full">
+								<label>Observações</label>
+								<textarea>Não há observações.</textarea>
+							</li>
+							<li data-width="full">
+								<button type="button">Salvar<i></i></button>
+								<button type="submit">Concluir manutenção</button>
+							</li>
+						</ul>
+					</form>
+				</li>
+
+
+				<!-- Agendamento de coleta p/ Seminovos -->
+				<!-- Status: desabilitado | pendente | agendado | atrasado | finalizado -->
+				<li class="desmob_card" onclick="expandDesmobCard(event)" data-status="habilitado">
+					<header>
+						<h3>Ag. de coleta p/ Seminovos</h3>
+						<dfn>Pendente</dfn>
+						<time title="Data agendada"><i></i>29 nov 2024</time>
+						<i></i>
+					</header>
+
+					<form>
+						<ul>
+							<li>
+								<label>Destino</label>
+								<em>Seminovos</em>
+							</li>
+							<li>
+								<label>Acionamento de transporte</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Agendar para</label>
+								<input type="date">
+							</li>
+							<li>
+								<label>Transportadora</label>
+								<button type="buttom" data-type="select">Selecione...<i></i></button>
+							</li>
+							<li>
+								<label>Valor do frete R$</label>
+								<input type="text" placeholder="0,00">
+							</li>
+							<li>
+								<label>Previsão de entrega</label>
+								<input type="date">
+							</li>
+							<li data-width="full">
+								<label>Endereço da coleta</label>
+								<input type="text" placeholder="Endereço...">
+							</li>
+							<li data-width="full">
+								<label>Endereço da entrega</label>
+								<input type="text" placeholder="Endereço...">
+							</li>
+							<li data-width="full">
+								<label>Observações</label>
+								<textarea>Não há observações.</textarea>
+							</li>
+							<li data-width="full">
+								<button type="submit">Agendar coleta</button>
+							</li>
+							<li data-width="full">
+								<button type="button">Cancelar agendamento</button>
+							</li>
+						</ul>
+					</form>
+				</li>
+
+
+				<!-- Em transporte p/ Seminovos -->
+				<!-- Status: desabilitado | habilitado | agendado | atrasado | finalizado -->
+				<li class="desmob_card" onclick="expandDesmobCard(event)" data-status="desabilitado">
+					<header>
+						<h3>Em transporte p/ Seminovos</h3>
+						<time title="Previsão de entrega"><i></i>29 nov 2024</time>
+						<i></i>
+					</header>
+
+					<form>
+						<ul>
+							<li>
+								<label>Transportadora</label>
+								<em>Omni Carga</em>
+							</li>
+							<li>
+								<label>Valor do frete R$</label>
+								<em>3.166,00</em>
+							</li>
+							<li>
+								<label>Previsão de entrega</label>
+								<em>seg, 7 out 2024<i></i></em>
+							</li>
+							<li data-width="full">
+								<label>Laudo de coleta da transportadora</label>
+								<input type="file">
+							</li>
+							<li data-width="full">
+								<label>Laudo de entrega da transportadora</label>
+								<input type="file">
+							</li>
+							<li data-width="full">
+								<button type="submit">Confirmar ativo em transporte</button>
+							</li>
+							<li data-width="full">
+								<button type="submit">Confirmar entrega</button>
+							</li>
+						</ul>
+					</form>
+				</li>
+
+
+				<!-- Entregue -->
+				<!-- Status:  desabilitado | finalizado -->
+				<li class="desmob_card" data-status="desabilitado">
+					<header>
+						<h3>Entregue</h3>
+						<time title="Data da entrega"><i></i>29 nov 2024</time>
+					</header>
+				</li>
+			</ol>
+		</section>
+
+		<!-- Log -->
+		<aside class="log">
+			<header>
+				<h2><i></i>Log</h2>
+				<button type="button" title="Detalhes">+ detalhes</button>
+				<button type="button" title="Crescente/Descrescente"><i></i></button>
+			</header>
+			<dl>
+				<dt><i></i>4 nov 2024</dt>
+				<dd>
+					<time>19h05</time>
+					<h3>Entregue</h3>
+					<p>[mais info...]</p>
+				</dd>
+				<dd>
+					<time>13h57</time>
+					<h3>Em transporte p/ Seminovos</h3>
+					<p>[mais info...]</p>
+				</dd>
+
+				<dt><i></i>3 nov 2024</dt>
+				<dd>
+					<time>18h32</time>
+					<h3>Transporte p/ Seminovos agendado p/ 8 ago 2024</h3>
+					<p>[mais info...]</p>
+				</dd>
+				<dd>
+					<time>10h07</time>
+					<h3>Em manutenção</h3>
+					<p>[mais info...]</p>
+				</dd>
+
+				<dt><i></i>2 nov 2024</dt>
+				<dd>
+					<time>9h14</time>
+					<h3>Em transporte p/ oficina</h3>
+					<p>[mais info...]</p>
+				</dd>
+
+				<dt><i></i>29 out 2024</dt>
+				<dd>
+					<time>15h21</time>
+					<h3>Transporte p/ oficina agendado p/ 5 ago 2024</h3>
+					<p>[mais info...]</p>
+				</dd>
+				<dd>
+					<time>12h42</time>
+					<h3>Em vistoria</h3>
+					<p>[mais info...]</p>
+				</dd>
+
+				<dt><i></i>28 out 2024</dt>
+				<dd>
+					<time>15h21</time>
+					<h3>Vistoria agendada p/ 1 ago 2024</h3>
+					<p>[mais info...]</p>
+				</dd>
+				<dd>
+					<time>12h42</time>
+					<h3>Acionamento</h3>
+					<p>[mais info...]</p>
+				</dd>
+			</dl>
+		</aside>
+	</div>
+
+</div>
+
+

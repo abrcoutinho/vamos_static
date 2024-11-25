@@ -1,0 +1,772 @@
+
+.assets_page
+	@extend %main_container
+	flex: 1 1 100%
+	overflow-y: auto
+	padding: .5rem
+	display: flex
+	gap: 1.25rem
+
+
+	// Lista de ativos
+	.asset_list
+		flex: 0 0 22.5rem
+		box-sizing: border-box
+		overflow-y: auto
+
+		&:hover
+			&::-webkit-scrollbar-thumb
+				background-color: var(--opacity_10)
+
+		&::-webkit-scrollbar-button:start
+			height: 7rem
+		&::-webkit-scrollbar-button:end
+			height: 1.25rem
+
+		header
+			padding: 1.25rem 1.25rem 0 .75rem
+			color: var(--neutral_100)
+			position: sticky
+			top: 0
+			background-color: var(--neutral_0)
+			z-index: 2
+
+			.back
+				@extend %button_ball_md
+
+				i
+					background-color: var(--neutral_80)
+					mask-image: url("../img/icons/back.svg")
+
+			div:first-of-type
+				display: flex
+				align-items: center
+				gap: .75rem
+
+				h1
+					flex: 2 1 auto
+					display: flex
+					align-items: center
+					gap: .5rem
+					font-weight: 400
+					font-size: 1.75rem
+
+					small
+						font-size: .75rem
+						font-weight: 800
+						background-color: var(--neutral_100)
+						color: var(--neutral_0)
+						border-radius: .25rem
+						padding: 1px .25rem
+						vertical-align: middle
+						margin-left: .5rem
+
+				.filters
+					display: flex
+					gap: .25rem
+					button
+						@extend %button_ball_md
+						i
+							width: 1rem
+							height: 1rem
+							background-color: var(--neutral_80)
+						&[title = "Filtros"] i
+							mask-image: url("../img/icons/filter.svg")
+						&[title = "Pesquisar"] i
+							mask-image: url("../img/icons/search.svg")
+
+			div:nth-of-type(2)
+				display: flex
+				align-items: center
+				gap: .75rem
+				padding: 1rem .5rem .25rem
+				i
+					display: inline-block
+					width: 1.5rem
+					height: 1.5rem
+					background-color: var(--brand)
+					mask-image: url("../img/icons/paper.svg")
+					mask-repeat: no-repeat
+					mask-position: center
+				h2
+					flex: 2 1 auto
+					font-weight: 500
+					text-transform: uppercase
+					font-size: .875rem
+				small
+					display: inline-block
+					color: var(--neutral_80)
+					font-size: .875rem
+
+		dl
+			margin: 2.5rem 1.25rem 1rem .75rem
+
+			dt
+				height: 1.5rem
+				font-weight: 700
+				text-transform: uppercase
+				color: var(--neutral_80)
+				overflow-x: hidden
+				text-align: center
+				margin: 0 1.25rem
+
+				small
+					position: relative
+					font-size: .75rem
+					background-color: var(--neutral_0)
+					padding: 0 1.25rem
+					&::before, &::after
+						content: ''
+						width: 9999px
+						border-bottom: solid 1px var(--opacity_10)
+						position: absolute
+						top: 50%
+					&::before
+						left: 100%
+					&::after
+						right: 100%
+
+
+			.batch
+				display: flex
+				align-items: center
+				padding: 0 .75rem
+
+				label
+					font-size: .85rem
+					color: var(--neutral_80)
+					font-weight: 400
+					flex: 1 1 auto
+					height: 2.25rem
+					cursor: pointer
+					line-height: 2.25rem
+					&:hover
+						color: var(--neutral_100)
+
+			dd[data-status]
+				display: flex
+				align-items: center
+				gap: 24px
+				outline: dashed 1px var(--opacity_20)
+				border-radius: .75rem
+				position: relative
+				padding-left: .5rem
+				margin-bottom: .5rem
+				transition: background-color .4s $ease
+				overflow: hidden
+
+				&:first-of-type
+					margin-top: .5rem
+
+				&:hover
+					outline: dashed 1px var(--neutral_100)
+
+				&::before
+					content: ''
+					width: 100%
+					height: .2rem
+					position: absolute
+					left: 0
+					bottom: 0
+
+				&[data-status="pendente"]::before
+					background-color: var(--status_alert)
+				&[data-status="agendado"]::before
+					background-color: var(--status_okay)
+				&[data-status="atrasado"]::before
+					background-color: var(--status_late)
+				&[data-status="neutro"]::before
+					background-color: transparent
+
+
+
+				a, label
+					flex: 1 1 auto
+					color: var(--neutral_100)
+					cursor: pointer
+
+					h5
+						display: flex
+						justify-content: space-between
+						align-items: center
+						padding: .5rem .5rem .5rem 0
+						font-weight: 600
+						font-size: 1rem
+
+						em
+							font-weight: 400
+					dfn
+						display: flex
+						justify-content: space-between
+						align-items: center
+						padding: 0 .5rem .5rem 0
+						font-style: normal
+						font-size: .875rem
+
+
+			.active
+				outline: solid 2px var(--neutral_80) !important
+				margin-top: .5rem
+				&:hover
+					outline: solid 2px var(--neutral_80) !important
+				a
+					cursor: default !important
+
+			&:has(.batch input:checked)
+				dd[data-status]
+					@include checkbox
+					margin-top: .5rem
+					&:has([type="checkbox"]:checked)
+						outline: dashed 1px var(--neutral_100)
+
+
+	// Detalhes do ativo
+	.asset_details
+		flex: 1 1 auto
+		display: grid
+		gap: .5rem
+		grid-template-columns: 1fr 18rem
+		grid-template-rows: auto 1fr
+		grid-template-areas: "asset_data log""desmob log"
+
+		& > *
+			background-color: var(--neutral_10)
+			border-radius: 1rem
+			box-sizing: border-box
+
+
+	// Dados do ativo
+	.asset_data
+		grid-area: asset_data
+
+		header
+			display: flex
+			gap: 1rem
+			align-items: center
+			padding: 1.25rem 1.25rem 1.2rem 1.25rem
+			color: var(--neutral_100)
+
+			h2
+				flex: 2 1 auto
+				font-size: 1.75rem
+				font-weight: 400
+			& > i
+				display: inline-block
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--neutral_80)
+				mask-image: url("../img/icons/steering-wheel.svg")
+				mask-repeat: no-repeat
+				mask-position: center
+				mask-size: 1.5rem auto
+
+			dfn
+				font-size: 1.5rem
+				font-weight: 300
+				font-style: normal
+
+			.more
+				@extend %button_square_md
+				i
+					mask-image: url("../img/icons/more.svg")
+					background-color: var(--neutral_80)
+
+		ul
+			display: grid
+			column-gap: 2.5rem
+			grid-template-columns: 1fr 1fr
+			padding: 0 1.25rem 1.25rem 1.25rem
+
+		li
+			padding: .5rem 0
+			border-bottom: solid 0.065rem var(--opacity_10)
+			display: flex
+			align-items: center
+
+			&:first-child
+				em
+					display: flex
+					gap: .25rem
+					align-items: center
+					justify-content: end
+				i
+					width: 1rem
+					height: 1rem
+					mask-image: url("../img/icons/schedule.svg")
+					background-color: var(--neutral_80)
+
+			&:last-child
+				border-bottom: none
+
+		small
+			display: block
+			color: var(--neutral_80)
+			font-size: .87rem
+			line-height: 1rem
+		em
+			display: block
+			color: var(--neutral_100)
+			font-size: 1rem
+			line-height: 1.5rem
+			flex: 1 1 auto
+			text-align: right
+
+
+	// Esteira de desmobilização
+	.desmob
+		grid-area: desmob
+		overflow-y: auto
+
+		&::-webkit-scrollbar-thumb
+			border-right: solid .188rem var(--neutral_10)
+		&:hover
+			&::-webkit-scrollbar-thumb
+				background-color: var(--opacity_10)
+
+		&::-webkit-scrollbar-button:start
+			height: 4rem
+		&::-webkit-scrollbar-button:end
+			height: 1.25rem
+
+		& > header
+			display: flex
+			gap: 1rem
+			align-items: center
+			padding: 0 1.25rem
+			color: var(--neutral_100)
+			height: 4rem
+			position: sticky
+			top: 0
+			background-color: var(--neutral_10)
+			z-index: 2
+
+			h2
+				flex: 2 1 auto
+				font-size: 1.5rem
+				font-weight: 400
+			& > i
+				display: inline-block
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--opacity_20)
+				mask-image: url("../img/icons/wrench.svg")
+				mask-repeat: no-repeat
+				mask-position: center
+
+		ol
+			padding: .25rem 1.25rem 1.25rem
+
+		.desmob_card
+			outline: solid 1px var(--opacity_10)
+			border-radius: .5rem
+			position: relative
+			overflow: hidden
+			max-height: 3rem
+			transition: max-height .7s $ease
+
+			&:not(:last-child)
+				margin-bottom: .5rem
+
+			&.expanded
+				max-height: 1999px
+
+			&::before
+				font-size: .75rem
+				color: var(--neutral_100)
+				width: 1.25rem
+				position: absolute
+				top: 1rem
+				left: 1rem
+				z-index: 1
+
+			&:hover
+				outline: solid 1px var(--opacity_20)
+
+			@for $i from 1 through 8
+				&:nth-child(#{$i})::before
+					content: '0#{$i}'
+
+			& > header
+				height: 3rem
+				box-sizing: border-box
+				display: flex
+				gap: .75rem
+				align-items: center
+				padding: 0 1rem 0 3.5rem
+				position: relative
+				cursor: pointer
+
+				&::after
+					content: ''
+					width: 100%
+					height: .25rem
+					position: absolute
+					bottom: 0
+					left: 0
+
+				h3
+					color: var(--neutral_100)
+					font-size: 1.5rem
+					font-weight: 300
+					flex: 1 1 auto
+					position: relative
+
+				dfn
+					font-size: .75rem
+					font-weight: 800
+					text-transform: uppercase
+					font-style: normal
+					color: var(--neutral_80)
+					height: 1.25rem
+					line-height: 1.25rem
+					padding: 0 .5rem
+					outline: solid 1px var(--opacity_20)
+					border-radius: .25rem
+
+				time
+					display: flex
+					align-items: center
+					gap: .25rem
+					font-size: .75rem
+					font-weight: 600
+					color: var(--neutral_80)
+					i
+						width: 1rem
+						height: 1rem
+						mask-image: url("../img/icons/schedule.svg")
+						background-color: var(--neutral_80)
+
+				& > i
+					width: 1.25rem
+					height: 1.25rem
+					mask-image: url("../img/icons/down.svg")
+					mask-size: 1.25rem auto
+					background-color: var(--neutral_80)
+
+			// Status pendente
+			&[data-status="pendente"]
+				box-shadow: 0 .25rem .5rem var(--opacity_10)
+				header
+					background-color: var(--neutral_0)
+					&::after
+						background-color: var(--status_alert)
+					time
+						display: none
+				form
+					background-color: var(--neutral_0)
+			// Status agendado
+			&[data-status="agendado"]
+				header
+					background-color: var(--neutral_0)
+					&::after
+						background-color: var(--status_okay)
+					dfn
+						display: none
+				form
+					background-color: var(--neutral_0)
+			// Status atrasado
+			&[data-status="atrasado"]
+				header
+					background-color: var(--neutral_0)
+					&::after
+						background-color: var(--status_late)
+					dfn
+						display: none
+					time
+						color: var(--brand)
+						i
+							background-color: var(--brand)
+				form
+					background-color: var(--neutral_0)
+			// Status finalizado
+			&[data-status="finalizado"]
+				background-image: linear-gradient(135deg, transparent 40%, var(--opacity_10) 40%, var(--opacity_10) 50%, transparent 50%, transparent 90%, var(--opacity_10) 90%, var(--opacity_10) 100%)
+				background-size: 14.14px 14.14px
+				outline: none
+				&:hover
+					outline: solid 1px var(--opacity_10)
+				header
+					dfn, time
+						display: none
+					h3
+						// checked symbol
+						&::before
+							content: ''
+							width: 2rem
+							height: 2rem
+							background-color: var(--neutral_0)
+							border-radius: 100%
+							outline: solid 2px var(--opacity_10)
+							position: absolute
+							top: 50%
+							right: 0
+							transform: translateY(-50%)
+						&::after
+							content: ''
+							width: 2rem
+							height: 2rem
+							background-color: var(--neutral_80)
+							mask-image: url("../img/icons/check.svg")
+							mask-repeat: no-repeat
+							mask-size: 1.25rem auto
+							mask-position: center
+							position: absolute
+							top: 50%
+							right: 0
+							transform: translateY(-50%)
+				&:last-child
+					&:hover
+						outline: none
+					header:hover
+						cursor: default
+			// Status habilitado
+			&[data-status="habilitado"]
+				box-shadow: 0 .25rem .5rem var(--opacity_10)
+				header
+					background-color: var(--neutral_0)
+					h3
+						&::after
+							content: ''
+							width: 1rem
+							height: 1rem
+							background-color: var(--opacity_20)
+							mask-image: url("../img/icons/sand-clocks.svg")
+							position: absolute
+							top: 50%
+							right: 0
+							transform: translateY(-50%)
+					dfn, time
+						display: none
+				form
+					background-color: var(--neutral_0)
+			// Status desabilitado
+			&[data-status="desabilitado"]
+				&:hover
+					outline: solid 1px var(--opacity_10)
+				header
+					cursor: default
+					h3
+						color: var(--opacity_20)
+						&::after
+							content: ''
+							width: 1rem
+							height: 1rem
+							background-color: var(--opacity_20)
+							mask-image: url("../img/icons/sand-clocks.svg")
+							position: absolute
+							top: 50%
+							right: 0
+							transform: translateY(-50%)
+					dfn, time
+						display: none
+					& > i
+						background-color: var(--opacity_10)
+			// Status atual
+			&[data-status="atual"]
+				box-shadow: 0 .25rem .5rem var(--opacity_10)
+				header
+					background-color: var(--neutral_0)
+					dfn
+						display: none
+				form
+					background-color: var(--neutral_0)
+
+		form
+			padding: 1rem
+			ul, header
+				border-radius: 1rem
+				display: flex
+				flex-wrap: wrap
+				gap: .75rem 1.25rem
+				padding: 1rem
+				background-color: var(--neutral_0)
+
+			li
+				flex: 1 1 0
+				min-width: 11.25rem
+				&[data-width="full"]
+					flex: 0 1 100%
+			label
+				display: block
+				color: var(--neutral_80)
+				font-size: .87rem
+				line-height: 1rem
+			em
+				display: block
+				color: var(--neutral_100)
+				font-size: 1rem
+				line-height: 1.5rem
+				border-bottom: solid 0.065rem var(--opacity_10)
+				padding-bottom: .5rem
+			input
+				width: 100%
+				border: none
+				border-bottom: solid 0.065rem var(--opacity_10)
+				padding-bottom: .5rem
+				background-color: transparent
+				color: var(--neutral_100)
+				font: 1rem $font
+				&:focus
+					outline: none
+				&::placeholder
+					color: var(--opacity_20)
+				&[type="file"]
+					border-bottom: none
+				&::file-selector-button
+					font: 1rem $font
+					height: 2.25rem
+					background-color: transparent
+					border-radius: .5rem
+					border: solid 1px var(--opacity_20)
+					padding: 0 .75rem
+					color: var(--neutral_80)
+					font-weight: 600
+					margin: .5rem 1rem 0 0
+					cursor: pointer
+
+			textarea
+				width: 100%
+				min-height: 5rem
+				background-color: var(--neutral_10)
+				border-radius: .5rem
+				margin-top: .5rem
+				border: none
+				padding: .5rem 1rem
+				box-sizing: border-box
+				color: var(--neutral_100)
+				&:focus
+					outline: solid 1px var(--opacity_20)
+			button
+				display: flex
+				align-items: center
+				gap: .75rem
+				font: 1rem $font
+				color: var(--neutral_100)
+				&[data-type="select"]
+					width: 100%
+					border-bottom: solid 0.065rem var(--opacity_10)
+					padding-bottom: .5rem
+					justify-content: space-between
+					i
+						width: 1.25rem
+						height: 1.25rem
+						background-color: var(--neutral_80)
+						mask-image: url("../img/icons/down.svg")
+				&[type="submit"]
+					@extend %button_square_md
+					width: auto
+					padding: 0 1rem
+
+
+	// Log
+	.log
+		grid-area: log
+		overflow-y: auto
+
+		&::-webkit-scrollbar-thumb
+			border-right: solid .188rem var(--neutral_10)
+		&:hover
+			&::-webkit-scrollbar-thumb
+				background-color: var(--opacity_10)
+
+		&::-webkit-scrollbar-button:start
+			height: 4rem
+		&::-webkit-scrollbar-button:end
+			height: 1.25rem
+
+		header
+			display: flex
+			align-items: center
+			gap: .25rem
+			padding: 1.75rem 1rem .5rem
+			background-color: var(--neutral_10)
+			position: sticky
+			top: 0
+			z-index: 1
+
+			h2
+				display: flex
+				align-items: center
+				gap: 1rem
+				color: var(--neutral_100)
+				flex: 1 1 auto
+				font-size: 1rem
+
+				i
+					width: 1.25rem
+					height: 1.25rem
+					mask-image: url("../img/icons/log.svg")
+					background-color: var(--opacity_20)
+			button
+				height: 1.5rem
+				min-width: 2.5rem
+				display: flex
+				justify-content: center
+				align-items: center
+				font: .75rem $font
+				color: var(--neutral_100)
+				background-color: transparent
+				padding: 0 .5rem
+				box-sizing: border-box
+				border-radius: .25rem
+				border: solid 1px var(--opacity_10)
+
+				&:last-of-type i
+					width: 1rem
+					height: 1rem
+					mask-image: url("../img/icons/arrange-dir.svg")
+					background-color: var(--neutral_100)
+				&:hover
+					background-color: var(--neutral_0)
+
+		dl
+			padding: 0 1rem 2rem
+
+		dt
+			height: 1.5rem
+			border-bottom: solid 1px var(--opacity_10)
+			font-size: .875rem
+			font-weight: 700
+			color: var(--neutral_80)
+			display: flex
+			align-items: center
+			gap: .75rem
+			padding: 0 .5rem
+			margin: 1.75rem 0 1rem
+
+			i
+				width: 1rem
+				height: 1rem
+				mask-image: url("../img/icons/schedule.svg")
+				background-color: var(--neutral_80)
+
+		dd
+			padding: .25rem .5rem .25rem 2.25rem
+			font-weight: 400
+			margin-bottom: .25rem
+			position: relative
+
+			&::before
+				content: ''
+				width: 1rem
+				height: 1rem
+				mask-image: url("../img/icons/clock-time.svg")
+				background-color: var(--neutral_80)
+				position: absolute
+				top: .5rem
+				left: .5rem
+
+			time
+				font-size: .875rem
+				color: var(--neutral_80)
+				line-height: 1.25rem
+			h3
+				font-size: 1rem
+				color: var(--neutral_100)
+				font-weight: 400
+			p
+				font-size: .875rem
+				color: var(--neutral_80)
+				line-height: 1.5rem
+				margin-top: .5rem
+

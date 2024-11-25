@@ -41,8 +41,8 @@ $font: "Outfit", system-ui
   --opacity_20: rgba(255,255,255,.4)
 
   --status_okay: #44C133
-  --status_alert: #E1636A
-  --status_late: #D3C225
+  --status_alert: #D3C225
+  --status_late: #E1636A
 
 
 $ease: cubic-bezier(0.5,0,0,1)
@@ -117,10 +117,11 @@ $placeholder: var(--brand)
   
 ::-webkit-scrollbar-track
   border-radius: .25rem
+  // background-color: red
 
 ::-webkit-scrollbar-thumb
   border-radius: .25rem
-  background-color: traansparent
+  background-color: transparent
   border-right: solid .188rem var(--neutral_0)
   -webkit-background-clip: content-box
 
@@ -241,6 +242,24 @@ $column-big-up: 1528px
     mask-repeat: no-repeat
     mask-position: center
 
+%button_square_md
+  width: 2.25rem
+  height: 2.25rem
+  background-color: var(--opacity_2)
+  border-radius: .5rem
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &:hover
+    background-color: var(--opacity_10)
+
+  i
+    width: 100%
+    height: 100%
+    mask-repeat: no-repeat
+    mask-position: center
+
 
 // Checkbox
 @mixin checkbox-label
@@ -303,6 +322,7 @@ $column-big-up: 1528px
   @include checkbox-after
   @include checkbox-unchecked
   @include checkbox-checked
+
 
 
 // Stripes

@@ -13,34 +13,15 @@ function toggleTheme(e) {
 switchTheme.addEventListener('change', toggleTheme, false);
 
 
+// Desmob cards
+function expandDesmobCard(evt) {
+  var i, desmob_card;
 
-// const phoneToCopy = document.getElementsByClassName(".phone");
+  desmob_card = document.getElementsByClassName("desmob_card");
+  for (i = 0; i < desmob_card.length; i++) {
+    desmob_card[i].className = desmob_card[i].className.replace(" expanded", "");
+  }
+  evt.currentTarget.className += " expanded";
 
-// for (var i = 0; i < phoneToCopy.length; i++) {
-//   phoneToCopy[i].addEventListener('click', function() {
-//     console.log(this.value);
-//   }, false);
-// }
-
-
-
-
-// Copy phone to clipboard
-// function copyPhone() {
-//   const phoneToCopy = document.querySelectorAll(".phone");
-
-//   for (var i = 0; i < phoneToCopy.length; i++) {
-//     phoneToCopy[i].addEventListener('click', function(event) {
-//       console.log(this.value);
-//     });
-//   }
-
-
-  // phoneToCopy.select();
-  // phoneToCopy.setSelectionRange(0, 99999); // For mobile devices
-
-  // navigator.clipboard.writeText(phoneToCopy.value);
-
-  // alert("Copied the text: " + phoneToCopy.value);
-// }
+}
 

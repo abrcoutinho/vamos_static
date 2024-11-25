@@ -14,19 +14,19 @@
 		height: 2rem
 
 	& > *
-		background-color: var(--neutral_10)
 		border-radius: 1rem
 		margin-bottom: .5rem
 
 		// Dados do contrato
-		&:first-child
+		&:first-child,
+		&:nth-child(2)
 			display: flex
 			gap: .5rem
-			background-color: initial
 			& > *
 				flex: 0 1 50%
 				background-color: var(--neutral_10)
 				border-radius: 1rem
+				box-sizing: border-box
 
 	.contract_data,
 	.client_data
@@ -51,7 +51,6 @@
 				i
 					width: 1rem
 					height: 1rem
-					-webkit-mask-image: url("../img/icons/edit.svg")
 					mask-image: url("../img/icons/edit.svg")
 					background-color: var(--neutral_80)
 				&:hover i
@@ -90,12 +89,11 @@
 			z-index: 2
 			border-radius: 1rem 1rem 0 0
 
-			button
+			.back
 				@extend %button_ball_md
 
 				i
 					background-color: var(--neutral_80)
-					-webkit-mask-image: url("../img/icons/back.svg")
 					mask-image: url("../img/icons/back.svg")
 
 			h1
@@ -108,10 +106,34 @@
 					width: 2rem
 					height: 2rem
 					background-color: var(--brand)
-					-webkit-mask-image: url("../img/icons/paper.svg")
 					mask-image: url("../img/icons/paper.svg")
 					mask-repeat: no-repeat
 					mask-position: center
+
+			.time
+				display: flex
+				align-items: center
+				gap: .5rem
+
+				time
+					display: flex
+					align-items: center
+					gap: .5rem
+					color: var(--neutral_80)
+					font-size: .87rem
+					line-height: 1rem
+
+					i
+						width: 1rem
+						height: 1rem
+						mask-image: url("../img/icons/schedule.svg")
+						background-color: var(--neutral_80)
+
+				.more
+					@extend %button_square_md
+					i
+						mask-image: url("../img/icons/more.svg")
+						background-color: var(--neutral_80)
 
 		ul
 			grid-template-columns: 1fr 1fr
@@ -129,28 +151,67 @@
 		column-gap: 2.5rem
 		li
 			&[data-type="cnpj"] > i
-				-webkit-mask-image: url("../img/icons/idcard.svg")
 				mask-image: url("../img/icons/idcard.svg")
 			&[data-type="email"] > i
-				-webkit-mask-image: url("../img/icons/mail.svg")
 				mask-image: url("../img/icons/mail.svg")
 			&[data-type="tel"] > i
-				-webkit-mask-image: url("../img/icons/mobile.svg")
 				mask-image: url("../img/icons/mobile.svg")
 			&[data-type="contato"] > i
-				-webkit-mask-image: url("../img/icons/user_outline.svg")
 				mask-image: url("../img/icons/user_outline.svg")
 			&[data-type="endereco"]
 				border-bottom: none
 				grid-area: footer
 				& > i
-					-webkit-mask-image: url("../img/icons/send.svg")
 					mask-image: url("../img/icons/send.svg")
+
+	// Multa | Avarias
+	.multa,
+	.avarias
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 4rem
+		box-sizing: border-box
+		padding: 0 1rem
+		cursor: pointer
+
+		&:hover
+			outline: solid 1px var(--opacity_10)
+
+		h2
+			font-size: 1.25rem
+			font-weight: 500
+			color: var(--neutral_100)
+			display: flex
+			gap: .5rem
+			align-items: center
+			i
+				width: 1rem
+				height: 1rem
+				background-color: var(--neutral_80)
+				mask-image: url("../img/icons/doc-info.svg")
+
+		strong
+			font-size: 1.25rem
+			font-weight: 500
+			color: var(--neutral_100)
+			display: flex
+			gap: .5rem
+			align-items: center
+			i
+				width: 1rem
+				height: 1rem
+				background-color: var(--neutral_100)
+				mask-image: url("../img/icons/down.svg")
+			b
+				font-weight: 800
+
 
 	// Ativos
 	& > table
 		width: 100%
 		padding: 0 1rem .75rem
+		background-color: var(--neutral_10)
 
 		tr
 			display: grid
@@ -159,6 +220,7 @@
 			grid-template-areas: "title . . . . . . . ."
 			column-gap: .25rem
 			margin-bottom: .25rem
+			border-radius: .625rem
 
 			&:first-child
 				position: sticky
@@ -166,8 +228,14 @@
 				z-index: 1
 				background-color: var(--neutral_10)
 
+			&:not(:first-child)
+				&:hover
+					outline: solid 1px var(--neutral_80)
+					cursor: pointer
+
+
 		th, td
-			height: 4.5rem
+			height: 4rem
 			color: var(--neutral_100)
 			&:first-child
 				grid-area: title
@@ -183,8 +251,23 @@
 			align-items: center
 
 			&:first-child
-				justify-content: initial
+				justify-content: space-between
 				padding: 0
+
+		.filters
+			display: flex
+			gap: .25rem
+			button
+				@extend %button_ball_md
+				i
+					width: 1rem
+					height: 1rem
+					background-color: var(--neutral_80)
+				&[title = "Filtros"] i
+					mask-image: url("../img/icons/filter.svg")
+				&[title = "Pesquisar"] i
+					mask-image: url("../img/icons/search.svg")
+
 
 		td
 			background-color: var(--opacity_2)
@@ -195,12 +278,8 @@
 			&:first-child
 				background-color: var(--neutral_0)
 
-			// Status OK
-			&.status-ok
-				@include stripes
-
-			// Status current
-			&.status-current
+			// Status na tabela: pendente | agendado | atrasado | atual | concluido 
+			&.pendente, &.agendado, &.atrasado, &.atual
 				&::before
 					content: ''
 					width: 50%
@@ -212,15 +291,36 @@
 					border-right: solid 2px var(--neutral_100) 
 				&::after
 					content: ''
-					width: 1.75rem
-					height: 1.75rem
-					border: solid 3px var(--neutral_100)
+					width: 1.2rem
+					height: 1.2rem
+					border: solid 2px var(--neutral_100)
 					border-radius: 50%
 					background-color: var(--status_okay)
 					position: absolute
 					top: 50%
 					left: 50%
 					transform: translate(-50%, -50%)
+
+			// Status pendente
+			&.pendente
+				&::after
+					background-color: var(--status_alert)
+			// Status agendado
+			&.agendado
+				&::after
+					background-color: var(--status_okay)
+			// Status atrasado
+			&.atrasado
+				&::after
+					background-color: var(--status_late)
+			// Status atual
+			&.atual
+				&::after
+					background-color: var(--neutral_10)
+			// Status concluido
+			&.concluido
+				@include stripes
+
 
 		h4
 			font-size: 1.25rem
@@ -229,11 +329,11 @@
 			display: flex
 			gap: .5rem
 			align-items: center
+			text-transform: initial
 			i
 				width: 1rem
 				height: 1rem
 				background-color: var(--neutral_80)
-				-webkit-mask-image: url("../img/icons/steering-wheel.svg")
 				mask-image: url("../img/icons/steering-wheel.svg")
 			small
 				font-size: .75rem
@@ -255,10 +355,8 @@
 			font-size: 1rem
 
 			em
-				background-color: var(--neutral_80)
-				color: var(--neutral_0)
-				padding: .25rem .5rem
-				border-radius: .375rem
+				font-weight: 400
+
 		dfn
 			display: flex
 			justify-content: space-between
