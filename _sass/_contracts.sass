@@ -80,10 +80,8 @@
 						height: 1rem
 						background-color: var(--neutral_100)
 						&:first-of-type
-							-webkit-mask-image: url("../img/icons/arrange.svg")
 							mask-image: url("../img/icons/arrange.svg")
 						&:last-of-type
-							-webkit-mask-image: url("../img/icons/down.svg")
 							mask-image: url("../img/icons/down.svg")
 
 				&:last-of-type
@@ -93,7 +91,6 @@
 						width: 1rem
 						height: 1rem
 						background-color: var(--neutral_100)
-						-webkit-mask-image: url("../img/icons/arrange-dir.svg")
 						mask-image: url("../img/icons/arrange-dir.svg")
 
 		.filters
@@ -106,10 +103,8 @@
 					height: 1rem
 					background-color: var(--neutral_80)
 				&[title = "Data"] i
-					-webkit-mask-image: url("../img/icons/schedule.svg")
 					mask-image: url("../img/icons/schedule.svg")
 				&[title = "Pesquisar"] i
-					-webkit-mask-image: url("../img/icons/search.svg")
 					mask-image: url("../img/icons/search.svg")
 
 		.export
@@ -123,7 +118,6 @@
 				width: 1.5rem
 				height: 1.5rem
 				background-color: var(--neutral_80)
-				-webkit-mask-image: url("../img/icons/xls.svg")
 				mask-image: url("../img/icons/xls.svg")
 
 	table
@@ -209,7 +203,6 @@
 				width: 1.5rem
 				height: 1.5rem
 				background-color: var(--brand)
-				-webkit-mask-image: url("../img/icons/paper.svg")
 				mask-image: url("../img/icons/paper.svg")
 
 		// Cliente
@@ -217,30 +210,43 @@
 			font-weight: bold
 			flex: 1 1 auto
 
-		// Vencimento
+		// Responsável comercial
 		&:nth-of-type(3)
+			flex: 0 1 auto
+			padding-right: 1.25rem
+			abbr
+				color: var(--neutral_80)
+				font-size: .875rem
+			i
+				width: 1rem
+				height: 1rem
+				background-color: var(--opacity_20)
+				mask-image: url("../img/icons/chief.svg")	
+
+		// Vencimento
+		&:nth-of-type(4)
 			flex: 0 1 8rem
 			i
 				width: 1.25rem
 				height: 1.25rem
 				background-color: var(--neutral_80)
-				-webkit-mask-image: url("../img/icons/calendar-alert.svg")
 				mask-image: url("../img/icons/calendar-alert.svg")
-			&[data-type="vencido"] i
-				background-color: var(--brand)
+			&[data-type="vencido"]
+				color: var(--brand)
+				i
+					background-color: var(--brand)
 
 		// CNPJ
-		&:nth-of-type(4)
+		&:nth-of-type(5)
 			flex: 0 1 12.5rem
 			i
 				width: 1.25rem
 				height: 1.25rem
 				background-color: var(--neutral_100)
-				-webkit-mask-image: url("../img/icons/idcard.svg")
 				mask-image: url("../img/icons/idcard.svg")
 
 		// Tel
-		&:nth-of-type(5)
+		&:nth-of-type(6)
 			flex: 0 1 2.25rem
 			height: 2.25rem
 			justify-content: center
@@ -248,7 +254,6 @@
 				width: 1.5rem
 				height: 1.5rem
 				background-color: var(--neutral_100)
-				-webkit-mask-image: url("../img/icons/mobile.svg")
 				mask-image: url("../img/icons/mobile.svg")
 			&:hover .hidden_info
 				visibility: visible
@@ -256,7 +261,7 @@
 				transition: opacity .4s $ease
 
 		// Email
-		&:nth-of-type(6)
+		&:nth-of-type(7)
 			flex: 0 1 2.25rem
 			height: 2.25rem
 			justify-content: center
@@ -269,7 +274,6 @@
 				width: 1.5rem
 				height: 1.5rem
 				background-color: var(--neutral_100)
-				-webkit-mask-image: url("../img/icons/mail.svg")
 				mask-image: url("../img/icons/mail.svg")
 
 			&:hover .hidden_info
@@ -278,7 +282,7 @@
 				transition: opacity .4s $ease
 
 		.hidden_info
-			min-width: 10rem
+			min-width: 11.25rem
 			height: 100%
 			display: flex
 			align-items: center
@@ -299,9 +303,16 @@
 				flex: 0 0 auto
 			i
 				background-color: var(--neutral_0)
+				flex: 0 0 auto
+			u
+				flex: 0 0 auto
+				width: 1rem
+				height: 1rem
+				background-color: var(--neutral_0)
+				mask-image: url("../img/icons/copy.svg")
 
 		// Status (Em dia | Inadimplente)
-		&:nth-of-type(7)
+		&:nth-of-type(8)
 			flex: 0 1 7.5rem
 			justify-content: right
 			em
