@@ -1,0 +1,619 @@
+---
+layout: default
+title: Operação - ativos
+permalink: /operacao_ativos/
+---
+
+<header class="current_page">
+	<ol>
+		<li><a href="#" class="home_shortcut" title="Início"><i></i></a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/" title="Desmobilização">Desmobilização</a></li>
+		<li>{{ page.title }}</li>
+	</ol>
+
+	<input id="switch_theme" type="checkbox" title="Tema">
+</header>
+
+<div class="operation_list">
+
+	<header>
+		<nav>
+			<!-- Tabs -->
+			<a href="{{ site.url }}{{ site.baseurl }}/operacao_chamados/" title="Chamados de desmobilização">Chamados<small>10</small></a>
+			<a href="#" title="Ativos em desmobilização" class="active">Ativos<small>10</small></a>
+			<a href="#" title="Lista de contratos">Contratos<small>10</small></a>
+		</nav>
+		<aside>
+			<!-- Arrange -->
+			<div class="arrange">
+				<button type="button" title="Ordenar">
+					<i></i>
+					<span>Data</span>
+					<i></i>
+				</button>
+				<button type="button" title="Crescente/Decrescente"><i></i></button>
+			</div>
+
+			<!-- Filters -->
+			<div class="filters">
+				<button type="button" title="Filtros"><i></i></button>
+				<button type="button" title="Data"><i></i></button>
+				<button type="button" title="Pesquisar"><i></i></button>
+			</div>
+
+			<!-- Export -->
+			<button type="button" title="Exportar" class="export">
+				<i></i>
+				<span>Exportar</span>
+			</button>
+		</aside>
+	</header>
+
+	<ol class="operacao_ativos_captions">
+		<li></li>
+		<li>Agendamento de vistoria</li>
+		<li><p>Em vistoria</p></li>
+		<li>Agendamento de coleta p/ oficina</li>
+		<li>Em transporte p/ oficina</li>
+		<li>Em manutenção</li>
+		<li>Ag. de coleta p/ Seminovos</li>
+		<li>Em transporte p/ Seminovos</li>
+		<li>Entregue</li>
+	</ol>
+
+	<div class="table_divisor"><small>Hoje</small></div>
+
+	<!-- Ativos -->
+	<table class="assets_table_list" data-type="operacao_ativos">
+		<tr>
+			<th>
+				<data title="N. do chamado"><i></i>#13214</data>
+				<strong>Ambev S.A.</strong>
+			</th>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<!-- Status na tabela: pendente | agendado | atrasado | atual | concluido -->
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="concluido"></td>
+			<td data-type="em-transporte-p-seminovos" class="concluido"></td>
+			<td data-type="entregue" class="atual" title="Entregue em 22 nov 2024"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="pendente" title="Pendente"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="atual" title="Entrada na oficina: 22 nov 2024"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="agendado" title="Previsão de entrega: 22 nov 2024"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="agendado" title="Agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="atrasado" title="Atrasado | agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="atual" title="Desde 22 nov 2024"></td>
+			<td data-type="agendamento-de-coleta-p-oficina"></td>
+			<td data-type="em-transporte-p-oficina" ></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="pendente" title="Pendente"></td>
+			<td data-type="em-vistoria"></td>
+			<td data-type="agendamento-de-coleta-p-oficina"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="pendente" title="Pendente"></td>
+			<td data-type="em-vistoria"></td>
+			<td data-type="agendamento-de-coleta-p-oficina"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="pendente" title="Pendente"></td>
+			<td data-type="em-vistoria"></td>
+			<td data-type="agendamento-de-coleta-p-oficina"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+
+	<!-- Ativos -->
+	<table class="assets_table_list" data-type="operacao_ativos">
+		<tr>
+			<th>
+				<data title="N. do chamado"><i></i>#13771</data>
+				<strong>Fruki Bebidas</strong>
+			</th>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="pendente" title="Pendente"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="atual" title="Entrada na oficina: 22 nov 2024"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="agendado" title="Agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="atrasado" title="Atrasado | agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+
+	<!-- Ativos -->
+	<table class="assets_table_list" data-type="operacao_ativos">
+		<tr>
+			<th>
+				<data title="N. do chamado"><i></i>#12456</data>
+				<strong>Amil</strong>
+			</th>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<!-- Status na tabela: pendente | agendado | atrasado | atual | concluido -->
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="concluido"></td>
+			<td data-type="em-transporte-p-seminovos" class="concluido"></td>
+			<td data-type="entregue" class="atual" title="Entregue em 22 nov 2024"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="pendente" title="Pendente"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="agendado" title="Previsão de entrega: 22 nov 2024"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="atrasado" title="Atrasado | agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+
+	<div class="table_divisor"><small>Ontem</small></div>
+
+	<!-- Ativos -->
+	<table class="assets_table_list" data-type="operacao_ativos">
+		<tr>
+			<th>
+				<data title="N. do chamado"><i></i>#13214</data>
+				<strong>Ambev S.A.</strong>
+			</th>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="agendado" title="Previsão de entrega: 22 nov 2024"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="agendado" title="Agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="atrasado" title="Atrasado | agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="atual" title="Desde 22 nov 2024"></td>
+			<td data-type="agendamento-de-coleta-p-oficina"></td>
+			<td data-type="em-transporte-p-oficina" ></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="pendente" title="Pendente"></td>
+			<td data-type="em-vistoria"></td>
+			<td data-type="agendamento-de-coleta-p-oficina"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+
+	<!-- Ativos -->
+	<table class="assets_table_list" data-type="operacao_ativos">
+		<tr>
+			<th>
+				<data title="N. do chamado"><i></i>#13771</data>
+				<strong>Fruki Bebidas</strong>
+			</th>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="pendente" title="Pendente"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="atual" title="Entrada na oficina: 22 nov 2024"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="agendado" title="Agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="atrasado" title="Atrasado | agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+
+	<!-- Ativos -->
+	<table class="assets_table_list" data-type="operacao_ativos">
+		<tr>
+			<th>
+				<data title="N. do chamado"><i></i>#12456</data>
+				<strong>Amil</strong>
+			</th>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<!-- Status na tabela: pendente | agendado | atrasado | atual | concluido -->
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="concluido"></td>
+			<td data-type="em-transporte-p-seminovos" class="concluido"></td>
+			<td data-type="entregue" class="atual" title="Entregue em 22 nov 2024"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="concluido"></td>
+			<td data-type="em-manutenção" class="concluido"></td>
+			<td data-type="ag-de-coleta-p-seminovos" class="pendente" title="Pendente"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="concluido"></td>
+			<td data-type="em-transporte-p-oficina" class="agendado" title="Previsão de entrega: 22 nov 2024"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="atrasado" title="Atrasado | agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+
+	<div class="table_divisor"><small>25 nov 2024</small></div>
+
+	<!-- Ativos -->
+	<table class="assets_table_list" data-type="operacao_ativos">
+		<tr>
+			<th>
+				<data title="N. do chamado"><i></i>#13214</data>
+				<strong>Ambev S.A.</strong>
+			</th>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="agendado" title="Agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>XC40 Recharge</span><em>OSL 2B02</em></h5>
+				<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="concluido"></td>
+			<td data-type="agendamento-de-coleta-p-oficina" class="atrasado" title="Atrasado | agendado p/ 22 nov 2024"></td>
+			<td data-type="em-transporte-p-oficina"></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+		<tr onclick="window.location = '{{ site.url }}{{ site.baseurl }}/ativos/';">
+			<td>
+				<h5><span>Jubileum</span><em>OAD 3Y21</em></h5>
+				<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+			</td>
+			<td data-type="agendamento-de-vistoria" class="concluido"></td>
+			<td data-type="em-vistoria" class="atual" title="Desde 22 nov 2024"></td>
+			<td data-type="agendamento-de-coleta-p-oficina"></td>
+			<td data-type="em-transporte-p-oficina" ></td>
+			<td data-type="em-manutenção"></td>
+			<td data-type="ag-de-coleta-p-seminovos"></td>
+			<td data-type="em-transporte-p-seminovos"></td>
+			<td data-type="entregue"></td>
+		</tr>
+	</table>
+
+</div>

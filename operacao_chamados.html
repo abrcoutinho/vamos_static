@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Operação
-permalink: /operacao/
+title: Operação - chamados
+permalink: /operacao_chamados/
 ---
 
 <header class="current_page">
@@ -17,16 +17,21 @@ permalink: /operacao/
 <div class="operation_list">
 
 	<header>
-		<h1>Chamados de desmobilização<small>10</small></h1>
+		<nav>
+			<!-- Tabs -->
+			<a href="#" title="Chamados de desmobilização" class="active">Chamados<small>10</small></a>
+			<a href="{{ site.url }}{{ site.baseurl }}/operacao_ativos/" title="Ativos em desmobilização">Ativos<small>10</small></a>
+			<a href="#" title="Lista de contratos">Contratos<small>10</small></a>
+		</nav>
 		<aside>
 			<!-- Arrange -->
 			<div class="arrange">
 				<button type="button" title="Ordenar">
 					<i></i>
-					<span>Data de solicitação</span>
+					<span>Data</span>
 					<i></i>
 				</button>
-				<button type="button" title="Crescente"><i></i></button>
+				<button type="button" title="Crescente/Decrescente"><i></i></button>
 			</div>
 
 			<!-- Filters -->
@@ -44,7 +49,7 @@ permalink: /operacao/
 		</aside>
 	</header>
 
-	<table>
+	<table class="calls_table_list">
 		<caption><small>Hoje</small></caption>
 
 		<!-- Pedido -->
@@ -58,7 +63,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>12</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>14 mai 24</time>
+				<time>14 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -85,7 +90,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>8</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>14 mai 24</time>
+				<time>14 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -112,7 +117,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>3</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>14 mai 24</time>
+				<time>14 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -139,7 +144,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>12</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>14 mai 24</time>
+				<time>14 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -166,7 +171,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>8</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>14 mai 24</time>
+				<time>14 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -193,7 +198,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>3</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>14 mai 24</time>
+				<time>14 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -210,7 +215,7 @@ permalink: /operacao/
 		</tr>
 	</table>
 
-	<table>
+	<table class="calls_table_list">
 		<caption><small>Ontem</small></caption>
 
 		<!-- Pedido -->
@@ -224,7 +229,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>12</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>13 mai 24</time>
+				<time>13 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -251,7 +256,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>8</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>13 mai 24</time>
+				<time>13 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -278,7 +283,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>3</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>13 mai 24</time>
+				<time>13 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -305,7 +310,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>12</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>13 mai 24</time>
+				<time>13 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -332,7 +337,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>8</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>13 mai 24</time>
+				<time>13 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -359,7 +364,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>3</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>13 mai 24</time>
+				<time>13 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -376,7 +381,7 @@ permalink: /operacao/
 		</tr>
 	</table>
 
-	<table>
+	<table class="calls_table_list">
 		<caption><small>Há 2 dias</small></caption>
 
 		<!-- Pedido -->
@@ -390,7 +395,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>12</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>12 mai 24</time>
+				<time>12 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -417,7 +422,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>8</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>12 mai 24</time>
+				<time>12 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -444,7 +449,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>3</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>12 mai 24</time>
+				<time>12 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -471,7 +476,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>12</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>12 mai 24</time>
+				<time>12 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -498,7 +503,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>8</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>12 mai 24</time>
+				<time>12 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
@@ -525,7 +530,7 @@ permalink: /operacao/
 			<td title="Ativos"><i></i>3</td>
 			<td title="Data de solicitação">
 				<i></i>
-				<time>12 mai 24</time>
+				<time>12 mai 24<small>17:23</small></time>
 			</td>
 			<td>
 				<ul>
