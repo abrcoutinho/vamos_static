@@ -13,7 +13,26 @@ function toggleTheme(e) {
 switchTheme.addEventListener('change', toggleTheme, false);
 
 
-// Desmob cards
+// Tabs em detalhe do contrato
+function changeAssetsTab(evt, content) {
+  var i,  tabcontent, tablink;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablink = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablink.length; i++) {
+    tablink[i].className = tablink[i].className.replace(" active", "");
+  }
+
+  document.getElementById(content).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+
+// Expande cards da esteira de desmobilizacao
 function expandDesmobCard(evt) {
   var i, desmob_card;
 
@@ -22,6 +41,5 @@ function expandDesmobCard(evt) {
     desmob_card[i].className = desmob_card[i].className.replace(" expanded", "");
   }
   evt.currentTarget.className += " expanded";
-
 }
 

@@ -8,218 +8,6 @@
 	gap: 1.25rem
 
 
-	// Lista de ativos
-	.asset_list
-		flex: 0 0 22.5rem
-		box-sizing: border-box
-		overflow-y: auto
-
-		&:hover
-			&::-webkit-scrollbar-thumb
-				background-color: var(--opacity_10)
-
-		&::-webkit-scrollbar-button:start
-			height: 7rem
-		&::-webkit-scrollbar-button:end
-			height: 1.25rem
-
-		header
-			padding: 1.25rem 1.25rem 0 .75rem
-			color: var(--neutral_100)
-			position: sticky
-			top: 0
-			background-color: var(--neutral_0)
-			z-index: 2
-
-			.back
-				@extend %button_ball_md
-
-				i
-					background-color: var(--neutral_80)
-					mask-image: url("../img/icons/back.svg")
-
-			div:first-of-type
-				display: flex
-				align-items: center
-				gap: .75rem
-
-				h1
-					flex: 2 1 auto
-					display: flex
-					align-items: center
-					gap: .5rem
-					font-weight: 400
-					font-size: 1.75rem
-
-					small
-						font-size: .75rem
-						font-weight: 800
-						background-color: var(--neutral_100)
-						color: var(--neutral_0)
-						border-radius: .25rem
-						padding: 1px .25rem
-						vertical-align: middle
-						margin-left: .5rem
-
-				.filters
-					display: flex
-					gap: .25rem
-					button
-						@extend %button_ball_md
-						i
-							width: 1rem
-							height: 1rem
-							background-color: var(--neutral_80)
-						&[title = "Filtros"] i
-							mask-image: url("../img/icons/filter.svg")
-						&[title = "Pesquisar"] i
-							mask-image: url("../img/icons/search.svg")
-
-			div:nth-of-type(2)
-				display: flex
-				align-items: center
-				gap: .75rem
-				padding: 1rem .5rem .25rem
-				i
-					display: inline-block
-					width: 1.5rem
-					height: 1.5rem
-					background-color: var(--brand)
-					mask-image: url("../img/icons/paper.svg")
-					mask-repeat: no-repeat
-					mask-position: center
-				h2
-					flex: 2 1 auto
-					font-weight: 500
-					text-transform: uppercase
-					font-size: .875rem
-				small
-					display: inline-block
-					color: var(--neutral_80)
-					font-size: .875rem
-
-		dl
-			margin: 2.5rem 1.25rem 1rem .75rem
-
-			dt
-				height: 1.5rem
-				font-weight: 700
-				text-transform: uppercase
-				color: var(--neutral_80)
-				overflow-x: hidden
-				text-align: center
-				margin: 0 1.25rem
-
-				small
-					position: relative
-					font-size: .75rem
-					background-color: var(--neutral_0)
-					padding: 0 1.25rem
-					&::before, &::after
-						content: ''
-						width: 9999px
-						border-bottom: solid 1px var(--opacity_10)
-						position: absolute
-						top: 50%
-					&::before
-						left: 100%
-					&::after
-						right: 100%
-
-
-			.batch
-				display: flex
-				align-items: center
-				padding: 0 .75rem
-
-				label
-					font-size: .85rem
-					color: var(--neutral_80)
-					font-weight: 400
-					flex: 1 1 auto
-					height: 2.25rem
-					cursor: pointer
-					line-height: 2.25rem
-					&:hover
-						color: var(--neutral_100)
-
-			dd[data-status]
-				display: flex
-				align-items: center
-				gap: 24px
-				outline: dashed 1px var(--opacity_20)
-				border-radius: .75rem
-				position: relative
-				padding-left: .5rem
-				margin-bottom: .5rem
-				transition: background-color .4s $ease
-				overflow: hidden
-
-				&:first-of-type
-					margin-top: .5rem
-
-				&:hover
-					outline: dashed 1px var(--neutral_100)
-
-				&::before
-					content: ''
-					width: 100%
-					height: .2rem
-					position: absolute
-					left: 0
-					bottom: 0
-
-				&[data-status="pendente"]::before
-					background-color: var(--status_alert)
-				&[data-status="agendado"]::before
-					background-color: var(--status_okay)
-				&[data-status="atrasado"]::before
-					background-color: var(--status_late)
-				&[data-status="neutro"]::before
-					background-color: transparent
-
-
-
-				a, label
-					flex: 1 1 auto
-					color: var(--neutral_100)
-					cursor: pointer
-
-					h5
-						display: flex
-						justify-content: space-between
-						align-items: center
-						padding: .5rem .5rem .5rem 0
-						font-weight: 600
-						font-size: 1rem
-
-						em
-							font-weight: 400
-					dfn
-						display: flex
-						justify-content: space-between
-						align-items: center
-						padding: 0 .5rem .5rem 0
-						font-style: normal
-						font-size: .875rem
-
-
-			.active
-				outline: solid 2px var(--neutral_80) !important
-				margin-top: .5rem
-				&:hover
-					outline: solid 2px var(--neutral_80) !important
-				a
-					cursor: default !important
-
-			&:has(.batch input:checked)
-				dd[data-status]
-					@include checkbox
-					margin-top: .5rem
-					&:has([type="checkbox"]:checked)
-						outline: dashed 1px var(--neutral_100)
-
-
 	// Detalhes do ativo
 	.asset_details
 		flex: 1 1 auto
@@ -770,3 +558,215 @@
 				line-height: 1.5rem
 				margin-top: .5rem
 
+
+
+// Lista de ativos desmobilizados
+.lista_ativos_desmobilizados//asset_list
+	flex: 0 0 22.5rem
+	box-sizing: border-box
+	overflow-y: auto
+
+	&:hover
+		&::-webkit-scrollbar-thumb
+			background-color: var(--opacity_10)
+
+	&::-webkit-scrollbar-button:start
+		height: 7rem
+	&::-webkit-scrollbar-button:end
+		height: 1.25rem
+
+	header
+		padding: 1.25rem 1.25rem 0 .75rem
+		color: var(--neutral_100)
+		position: sticky
+		top: 0
+		background-color: var(--neutral_0)
+		z-index: 2
+
+		.back
+			@extend %button_ball_md
+
+			i
+				background-color: var(--neutral_80)
+				mask-image: url("../img/icons/back.svg")
+
+		div:first-of-type
+			display: flex
+			align-items: center
+			gap: .75rem
+
+			h1
+				flex: 2 1 auto
+				display: flex
+				align-items: center
+				gap: .5rem
+				font-weight: 400
+				font-size: 1.75rem
+
+				small
+					font-size: .75rem
+					font-weight: 800
+					background-color: var(--neutral_100)
+					color: var(--neutral_0)
+					border-radius: .25rem
+					padding: 1px .25rem
+					vertical-align: middle
+					margin-left: .5rem
+
+			.filters
+				display: flex
+				gap: .25rem
+				button
+					@extend %button_ball_md
+					i
+						width: 1rem
+						height: 1rem
+						background-color: var(--neutral_80)
+					&[title = "Filtros"] i
+						mask-image: url("../img/icons/filter.svg")
+					&[title = "Pesquisar"] i
+						mask-image: url("../img/icons/search.svg")
+
+		div:nth-of-type(2)
+			display: flex
+			align-items: center
+			gap: .75rem
+			padding: 1rem .5rem .25rem
+			i
+				display: inline-block
+				width: 1.5rem
+				height: 1.5rem
+				background-color: var(--brand)
+				mask-image: url("../img/icons/paper.svg")
+				mask-repeat: no-repeat
+				mask-position: center
+			h2
+				flex: 2 1 auto
+				font-weight: 500
+				text-transform: uppercase
+				font-size: .875rem
+			small
+				display: inline-block
+				color: var(--neutral_80)
+				font-size: .875rem
+
+	dl
+		margin: 2.5rem 1.25rem 1rem .75rem
+
+		dt
+			height: 1.5rem
+			font-weight: 700
+			text-transform: uppercase
+			color: var(--neutral_80)
+			overflow-x: hidden
+			text-align: center
+			margin: 0 1.25rem
+
+			small
+				position: relative
+				font-size: .75rem
+				background-color: var(--neutral_0)
+				padding: 0 1.25rem
+				&::before, &::after
+					content: ''
+					width: 9999px
+					border-bottom: solid 1px var(--opacity_10)
+					position: absolute
+					top: 50%
+				&::before
+					left: 100%
+				&::after
+					right: 100%
+
+
+		.batch
+			display: flex
+			align-items: center
+			padding: 0 .75rem
+
+			label
+				font-size: .85rem
+				color: var(--neutral_80)
+				font-weight: 400
+				flex: 1 1 auto
+				height: 2.25rem
+				cursor: pointer
+				line-height: 2.25rem
+				&:hover
+					color: var(--neutral_100)
+
+		dd[data-status]
+			display: flex
+			align-items: center
+			gap: 24px
+			outline: dashed 1px var(--opacity_20)
+			background-color: var(--neutral_0)
+			border-radius: .75rem
+			position: relative
+			padding-left: .5rem
+			margin-bottom: .5rem
+			overflow: hidden
+
+			&:first-of-type
+				margin-top: .5rem
+
+			&:hover
+				outline: dashed 1px var(--neutral_100)
+
+			&::before
+				content: ''
+				width: 100%
+				height: .2rem
+				position: absolute
+				left: 0
+				bottom: 0
+
+			&[data-status="pendente"]::before
+				background-color: var(--status_alert)
+			&[data-status="agendado"]::before
+				background-color: var(--status_okay)
+			&[data-status="atrasado"]::before
+				background-color: var(--status_late)
+			&[data-status="neutro"]::before
+				background-color: transparent
+
+
+
+			a, label
+				flex: 1 1 auto
+				color: var(--neutral_100)
+				cursor: pointer
+
+				h5
+					display: flex
+					justify-content: space-between
+					align-items: center
+					padding: .5rem .5rem .5rem 0
+					font-weight: 600
+					font-size: 1rem
+
+					em
+						font-weight: 400
+				dfn
+					display: flex
+					justify-content: space-between
+					align-items: center
+					padding: 0 .5rem .5rem 0
+					font-style: normal
+					font-size: .875rem
+
+
+		.active
+			outline: solid 2px var(--neutral_80) !important
+			margin-top: .5rem
+			&:hover
+				outline: solid 2px var(--neutral_80) !important
+			a
+				cursor: default !important
+
+		&:has(.batch input:checked)
+			dd[data-status]
+				@include checkbox
+				margin-top: .5rem
+				&:has([type="checkbox"]:checked)
+					outline: dashed 1px var(--neutral_100)

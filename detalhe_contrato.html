@@ -187,10 +187,10 @@ permalink: /22833-1-REV2/
 		</section>
 	</main>
 
-	<!-- Ativos -->
+	<!-- Coluna de ativos -->
 	<aside>
 		<header>
-			<h4><i></i>Ativos<small>10</small></h4>
+			<h4><i></i>Ativos</h4>
 
 			<!-- Filters -->
 			<div class="filters">
@@ -205,7 +205,29 @@ permalink: /22833-1-REV2/
 			</button>
 		</header>
 
-		<form>
+		<!-- Tabs -->
+		<div class="tabs">
+			<div>
+				<button
+					type="button" 
+					class="tablink active" 
+					title="Mobilizados"
+					onclick="changeAssetsTab(event, 'mob_tabcontent')">
+					Mobilizados<small>10</small>
+				</button>
+				<button 
+					type="button" 
+					class="tablink" 
+					title="Desmobilizados"
+					onclick="changeAssetsTab(event, 'desmob_tabcontent')">
+					Desmobilizados<small>10</small>
+				</button>
+			</div>
+		</div>
+
+
+		<!-- Lista de ativos mobilizados -->
+		<form class="lista_ativos_mobilizados tabcontent" id="mob_tabcontent">
 			<header>
 				<input type="checkbox" id="select-all">
 				<label for="select-all">0 selecionados</label>
@@ -280,6 +302,87 @@ permalink: /22833-1-REV2/
 				<button type="button">Desmobilizar ativo(s)<i></i></button>
 			</footer>
 		</form>
+
+
+		<!-- Lista de ativos desmobilizados -->
+		<nav class="lista_ativos_desmobilizados tabcontent" id="desmob_tabcontent">
+			<dl>
+				<dt><small>Ag. de vistoria</small></dt>
+	
+				<!-- Status: pendente | agendado | atrasado | neutro -->
+				<dd data-status="pendente">
+					<a href="#">
+						<h5><span>Accelo</span><em>DER3A60</em></h5>
+						<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="agendado">
+					<a href="#">
+						<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="atrasado">
+					<a href="#">
+						<h5><span>770S Fire</span><em>TQF1Z97</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt><small>Em manutenção</small></dt>
+				
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Accelo</span><em>DER3A60</em></h5>
+						<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt><small>Entregue</small></dt>
+		
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>770S Fire</span><em>TQF1Z97</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+						<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Daily 35s14</span><em>TRE5C76</em></h5>
+						<dfn><span>Iveco</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Tector</span><em>KPL7A53</em></h5>
+						<dfn><span>Iveco</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+			</dl>
+		</nav>
+
 	</aside>
 
 </div>
