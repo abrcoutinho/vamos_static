@@ -211,9 +211,9 @@ permalink: /22833-1-REV2/
 				<button
 					type="button" 
 					class="tablink active" 
-					title="Mobilizados"
+					title="A desmobilizar"1
 					onclick="changeAssetsTab(event, 'mob_tabcontent')">
-					Mobilizados<small>10</small>
+					A Desmobilizar<small>10</small>
 				</button>
 				<button 
 					type="button" 
@@ -226,7 +226,7 @@ permalink: /22833-1-REV2/
 		</div>
 
 
-		<!-- Lista de ativos mobilizados -->
+		<!-- Lista de ativos a desmobilizar -->
 		<form class="lista_ativos_mobilizados tabcontent" id="mob_tabcontent">
 			<header>
 				<input type="checkbox" id="select-all">
@@ -299,7 +299,7 @@ permalink: /22833-1-REV2/
 			</fieldset>
 
 			<footer>
-				<button type="button">Desmobilizar ativo(s)<i></i></button>
+				<button type="button" onclick="revealSelectedAssets()">Desmobilizar ativo(s)<i></i></button>
 			</footer>
 		</form>
 
@@ -382,9 +382,89 @@ permalink: /22833-1-REV2/
 				</dd>
 			</dl>
 		</nav>
-
 	</aside>
 
+	<form class="ativos_selecionados">
+		<header>
+			<h4>Desmobilizar 4 ativos</h4>
+			<fieldset>
+				<div>
+					<label>Motivo:</label>
+					<button type="button" data-type="select-button" onclick="selectMotivo()">Selecione<i></i></button>
 
+					<!-- Floating menu -->
+					<dl class="floating_menu motivo_desmob_menu">
+						<dt>Motivo de desmobilização</dt>
+						<dd><button type="button">Devolução antecipada</button></dd>
+						<dd><button type="button">Furto/Roubo</button></dd>
+						<dd><button type="button">Perda total</button></dd>
+						<dd><button type="button">Reintegração de posse / amigável</button></dd>
+						<dd><button type="button">Reintegração de posse / inadimplência</button></dd>
+						<dd><button type="button" class="selected">Renovação de contrato</button></dd>
+						<dd><button type="button">Substituição</button></dd>
+						<dd><button type="button">Término de contrato</button></dd>
+						<dd><button type="button">Termo de sessão</button></dd>
+						<dd><button type="button">Vendido para o cliente</button></dd>
+						<dd><button type="button">Outro motivo...</button></dd>
+					</dl>
+				</div>
+				<div>
+					<label for="por_ativo">Por ativo</label>
+					<input id="por_ativo" type="checkbox">
+				</div>
+			</fieldset>
+
+		</header>
+
+		<ul>
+			<li>
+				<label for="DER3A60">
+					<h5><span>Accelo</span><em>DER3A60</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="DER3A60" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+			<li>
+				<label for="WQE1T43">
+					<h5><span>Accelo</span><em>WQE1T43</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="WQE1T43" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+			<li>
+				<label for="POI9U876">
+					<h5><span>Accelo</span><em>POI9U876</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="POI9U876" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+			<li>
+				<label for="ZXC1Q234">
+					<h5><span>Accelo</span><em>ZXC1Q234</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="ZXC1Q234" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+		</ul>
+
+		<footer>
+			<button type="button" data-type="transparent" onclick="cancelSelectedAssets()">Cancelar</button>
+			<!-- data-types: disabled | filled -->
+			<button type="button" data-type="disabled" onclick="confirmDesmobSelectedAssets()">Continuar<i></i></button>
+
+			<!-- Popup confirmation -->
+			<div class="dialog" data-type="brand">
+				<strong>Confirmar desmobilização?</strong>
+				<footer>
+					<button type="button" data-type="transparent" onclick="cancelDesmobDialog()">Cancelar</button>
+					<button type="button" data-type="filled">Confirmar</button>
+				</footer>
+			</div>
+		</footer>
+	</form>
 
 </div>

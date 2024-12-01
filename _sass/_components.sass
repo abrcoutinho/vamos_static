@@ -1,0 +1,297 @@
+
+%input_focus
+  outline:
+    width: .25rem
+    style: solid
+    color: transparent
+    offset: -.25rem
+  &:hover
+    outline-color: black
+  &:focus
+    outline-color: #FFE2A9
+
+
+// BUTTONS
+
+%button_ball_md
+  width: 2.25rem
+  height: 2.25rem
+  border: solid 1px var(--opacity_20)
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  outline: solid 1px transparent
+
+  &:hover
+    outline-color: var(--neutral_80)
+
+  i
+    width: 100%
+    height: 100%
+    mask-repeat: no-repeat
+    mask-position: center
+
+%button_square_md
+  width: 2.25rem
+  height: 2.25rem
+  background-color: var(--opacity_2)
+  border-radius: .5rem
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &:hover
+    background-color: var(--opacity_10)
+
+  i
+    width: 100%
+    height: 100%
+    mask-repeat: no-repeat
+    mask-position: center
+
+%button_md
+  height: 2.25rem
+  border-radius: .5rem
+  display: flex
+  align-items: center
+  gap: .5rem
+  padding: 0 .75rem
+  font-family: $font
+  font-size: .875rem
+  font-weight: 600
+  color: var(--neutral_100)
+  box-sizing: border-box
+  cursor: pointer
+
+  &:hover
+    opacity: .7
+
+  i
+    width: 1rem
+    height: 1rem
+    mask:
+      repeat: no-repeat
+      position: center
+      size: contain
+
+  &[data-type="filled"]
+    background-color: var(--brand)
+    color: white
+    i
+      background-color: white
+
+  &[data-type="outlined"]
+    background-color: transparent
+    border: solid 1px var(--neutral_80)
+    i
+      background-color: var(--neutral_80)
+
+  &[data-type="transparent"]
+    background-color: transparent
+    i
+      background-color: var(--neutral_80)
+
+  &[data-type="disabled"]
+    background-color: var(--opacity_10)
+    color: var(--neutral_0)
+    cursor: default
+    i
+      background-color: var(--neutral_0)
+    &:hover
+      opacity: 1
+
+  &[data-type="select-button"]
+    background-color: transparent
+    border: solid 1px var(--brand)
+    i
+      background-color: var(--neutral_100)
+      mask-image: url("../img/icons/down.svg")
+
+
+// CHECKBOX
+
+@mixin checkbox-label
+  [type="checkbox"]:not(:checked) + label,
+  [type="checkbox"]:checked + label
+    position: relative
+    cursor: pointer
+    padding-left: 2.3rem
+
+@mixin checkbox-before
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    width: 1.125rem
+    height: 1.125rem
+    border: .125rem solid var(--neutral_100)
+    background: var(--neutral_0)
+    border-radius: .2rem
+    box-sizing: border-box
+
+@mixin checkbox-after
+  [type="checkbox"]:not(:checked) + label:after,
+  [type="checkbox"]:checked + label:after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 0
+    width: 1.125rem
+    height: 1.125rem
+    border-radius: .2rem
+    background:
+      color: var(--brand)
+      repeat: no-repeat
+      position: center
+      image: url("../img/icons/checked.svg")
+    transition: transform .3s $ease
+
+@mixin checkbox-unchecked
+  [type="checkbox"]:not(:checked) + label:after
+    opacity: 0
+    transform: translateY(-50%) scale(0)
+
+@mixin checkbox-checked
+  [type="checkbox"]:checked + label:after
+    opacity: 1
+    transform: translateY(-50%) scale(1)
+
+@mixin checkbox
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked
+    position: absolute
+    left: 0
+    opacity: 0.01
+  @include checkbox-label
+  @include checkbox-before
+  @include checkbox-after
+  @include checkbox-unchecked
+  @include checkbox-checked
+
+
+// SWITCH
+
+%switch
+  -webkit-appearance: none
+  outline: none
+  width: 2rem
+  height: 1.25rem
+  background-color: var(--opacity_20)
+  border-radius: 2rem
+  position: relative
+  cursor: pointer
+  transition: background-color .3s $ease
+
+  &::after
+    content: ''
+    position: absolute
+    height: 1rem
+    width: 1rem
+    border-radius: 50%
+    top: .125rem
+    left: .125rem
+    background-color: var(--neutral_0)
+    z-index: 1
+    transition: transform .4s $ease
+
+  &:checked
+    background-color: var(--brand)
+    &::after
+      transform: translate(80%)
+
+
+// DIALOGS
+
+%dialog
+  position: absolute
+  z-index: 5
+  padding: 1.25rem
+  border-radius: .75rem
+  box-sizing: border-box
+  display: none
+
+  strong
+    font-size: 1.25rem
+    font-weight: 600
+    line-height: 1.25rem
+
+  footer
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    gap: 1rem
+    margin-top: 2rem
+
+  button
+    @extend %button_md
+
+  &[data-type="brand"]
+    background-color: var(--brand)
+    color: white
+    box-shadow: 0 -.5rem 2rem rgba(0,0,0,.3)
+
+    button[data-type="transparent"]
+      color: white 
+    button[data-type="filled"]
+      color: black
+      background-color: white
+
+
+// FLOATING MENUS
+
+.floating_menu
+  position: absolute
+  top: 100%
+  left: 0
+  background-color: var(--neutral_0)
+  border-radius: .5rem
+  min-width: 10rem
+  max-width: 18rem
+  padding: .5rem
+  box-sizing: border-box
+  z-index: 5
+  font-size: .875rem
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.3)
+  display: none
+
+  dt
+    padding: .25rem .5rem .5rem
+    border-bottom: solid 1px var(--opacity_20)
+    font-weight: 600
+    margin-bottom: .5rem
+  dd
+    display: flex
+    overflow: hidden
+  button
+    flex: 1 1 auto
+    font: .875rem $font
+    color: var(--neutral_100)
+    padding: 0 .5rem
+    height: 2rem
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    white-space: nowrap
+    text-align: left
+    border-radius: .5rem
+    &:hover
+      background-color: var(--neutral_10)
+    &.selected
+      background-color: var(--neutral_10)
+      font-weight: 600
+
+
+
+
+// Stripes
+@mixin stripes
+  background-image: linear-gradient(135deg, transparent 40%, var(--neutral_80) 40%, var(--neutral_80) 50%, transparent 50%, transparent 90%, var(--neutral_80) 90%, var(--neutral_80) 100%)
+  background-size: 14.14px 14.14px
+
+
+
+

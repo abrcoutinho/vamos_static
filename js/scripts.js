@@ -32,6 +32,26 @@ function changeAssetsTab(evt, content) {
 }
 
 
+// Desmobilizar ativos em detalhe do contrato
+function revealSelectedAssets() {
+  document.querySelector(".contract_detail > aside").style.display = "none";
+  document.querySelector(".contract_detail .ativos_selecionados").style.display = "flex";
+}
+function cancelSelectedAssets() {
+  document.querySelector(".contract_detail > aside").style.display = "flex";
+  document.querySelector(".contract_detail .ativos_selecionados").style.display = "none";
+}
+function confirmDesmobSelectedAssets() {
+  document.querySelector(".contract_detail .ativos_selecionados .dialog").style.display = "block";
+}
+function cancelDesmobDialog() {
+  document.querySelector(".contract_detail .ativos_selecionados .dialog").style.display = "none";
+}
+function selectMotivo() {
+  document.querySelector(".contract_detail .ativos_selecionados .motivo_desmob_menu").style.display = "block";
+}
+
+
 // Expande cards da esteira de desmobilizacao
 function expandDesmobCard(evt) {
   var i, desmob_card;
