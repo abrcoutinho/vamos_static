@@ -187,10 +187,10 @@ permalink: /22833-1-REV2/
 		</section>
 	</main>
 
-	<!-- Ativos -->
+	<!-- Coluna de ativos -->
 	<aside>
 		<header>
-			<h4><i></i>Ativos<small>10</small></h4>
+			<h4><i></i>Ativos</h4>
 
 			<!-- Filters -->
 			<div class="filters">
@@ -205,7 +205,29 @@ permalink: /22833-1-REV2/
 			</button>
 		</header>
 
-		<form>
+		<!-- Tabs -->
+		<div class="tabs">
+			<div>
+				<button
+					type="button" 
+					class="tablink active" 
+					title="A desmobilizar"1
+					onclick="changeAssetsTab(event, 'mob_tabcontent')">
+					A Desmobilizar<small>10</small>
+				</button>
+				<button 
+					type="button" 
+					class="tablink" 
+					title="Desmobilizados"
+					onclick="changeAssetsTab(event, 'desmob_tabcontent')">
+					Desmobilizados<small>10</small>
+				</button>
+			</div>
+		</div>
+
+
+		<!-- Lista de ativos a desmobilizar -->
+		<form class="lista_ativos_mobilizados tabcontent" id="mob_tabcontent">
 			<header>
 				<input type="checkbox" id="select-all">
 				<label for="select-all">0 selecionados</label>
@@ -277,9 +299,172 @@ permalink: /22833-1-REV2/
 			</fieldset>
 
 			<footer>
-				<button type="button">Desmobilizar ativo(s)<i></i></button>
+				<button type="button" onclick="revealSelectedAssets()">Desmobilizar ativo(s)<i></i></button>
 			</footer>
 		</form>
+
+
+		<!-- Lista de ativos desmobilizados -->
+		<nav class="lista_ativos_desmobilizados tabcontent" id="desmob_tabcontent">
+			<dl>
+				<dt><small>Ag. de vistoria</small></dt>
+	
+				<!-- Status: pendente | agendado | atrasado | neutro -->
+				<dd data-status="pendente">
+					<a href="#">
+						<h5><span>Accelo</span><em>DER3A60</em></h5>
+						<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="agendado">
+					<a href="#">
+						<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="atrasado">
+					<a href="#">
+						<h5><span>770S Fire</span><em>TQF1Z97</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt><small>Em manutenção</small></dt>
+				
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Accelo</span><em>DER3A60</em></h5>
+						<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+			</dl>
+
+			<dl>
+				<dt><small>Entregue</small></dt>
+		
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Jubileum</span><em>OAD3Y21</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>770S Fire</span><em>TQF1Z97</em></h5>
+						<dfn><span>Scania</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>XC40 Recharge</span><em>OSL2B02</em></h5>
+						<dfn><span>Volvo</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Daily 35s14</span><em>TRE5C76</em></h5>
+						<dfn><span>Iveco</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+				<dd data-status="neutro">
+					<a href="#">
+						<h5><span>Tector</span><em>KPL7A53</em></h5>
+						<dfn><span>Iveco</span><span>Ano 2023</span></dfn>
+					</a>
+				</dd>
+			</dl>
+		</nav>
 	</aside>
+
+	<form class="ativos_selecionados">
+		<header>
+			<h4>Desmobilizar 4 ativos</h4>
+			<fieldset>
+				<div>
+					<label>Motivo:</label>
+					<button type="button" data-type="select-button" onclick="selectMotivo()">Selecione<i></i></button>
+
+					<!-- Floating menu -->
+					<dl class="floating_menu motivo_desmob_menu">
+						<dt>Motivo de desmobilização</dt>
+						<dd><button type="button">Devolução antecipada</button></dd>
+						<dd><button type="button">Furto/Roubo</button></dd>
+						<dd><button type="button">Perda total</button></dd>
+						<dd><button type="button">Reintegração de posse / amigável</button></dd>
+						<dd><button type="button">Reintegração de posse / inadimplência</button></dd>
+						<dd><button type="button" class="selected">Renovação de contrato</button></dd>
+						<dd><button type="button">Substituição</button></dd>
+						<dd><button type="button">Término de contrato</button></dd>
+						<dd><button type="button">Termo de sessão</button></dd>
+						<dd><button type="button">Vendido para o cliente</button></dd>
+						<dd><button type="button">Outro motivo...</button></dd>
+					</dl>
+				</div>
+				<div>
+					<label for="por_ativo">Por ativo</label>
+					<input id="por_ativo" type="checkbox">
+				</div>
+			</fieldset>
+
+		</header>
+
+		<ul>
+			<li>
+				<label for="DER3A60">
+					<h5><span>Accelo</span><em>DER3A60</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="DER3A60" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+			<li>
+				<label for="WQE1T43">
+					<h5><span>Accelo</span><em>WQE1T43</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="WQE1T43" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+			<li>
+				<label for="POI9U876">
+					<h5><span>Accelo</span><em>POI9U876</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="POI9U876" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+			<li>
+				<label for="ZXC1Q234">
+					<h5><span>Accelo</span><em>ZXC1Q234</em></h5>
+					<dfn><span>Mercedes</span><span>Ano 2023</span></dfn>
+					<small><span title="Chassi"><i></i>9BD111060T5001256</span><span title="Vencimento"><i></i>12 fev 2025</span></small>
+				</label>
+				<div><button id="ZXC1Q234" type="button" data-type="select-button">Selecione<i></i></button></div>
+			</li>
+		</ul>
+
+		<footer>
+			<button type="button" data-type="transparent" onclick="cancelSelectedAssets()">Cancelar</button>
+			<!-- data-types: disabled | filled -->
+			<button type="button" data-type="disabled" onclick="confirmDesmobSelectedAssets()">Continuar<i></i></button>
+
+			<!-- Popup confirmation -->
+			<div class="dialog" data-type="brand">
+				<strong>Confirmar desmobilização?</strong>
+				<footer>
+					<button type="button" data-type="transparent" onclick="cancelDesmobDialog()">Cancelar</button>
+					<button type="button" data-type="filled">Confirmar</button>
+				</footer>
+			</div>
+		</footer>
+	</form>
 
 </div>
